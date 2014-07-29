@@ -12,7 +12,7 @@
         //echo 'testphp';
         //include 'auth.php';
         //echo '</br></br>Script auth concluso';
-        include 'login.php';
+        include 'main.php';
         ?>
     </body>
 </html>

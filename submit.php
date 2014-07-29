@@ -22,8 +22,8 @@
 					<header id="header">
 						<h1><a href="#" id="logo">DMI Preprints</a></h1>
 						<nav id="nav">
-							<a href="main.php" class="current-page-item">Search Preprint</a>
-							<a href="submit.php">Submit Preprint</a>
+							<a href="main.php">Search Preprint</a>
+							<a href="submit.php" class="current-page-item">Submit Preprint</a>
 							<a href="logout.php">Logout</a>
 						</nav>
 					</header>
@@ -33,7 +33,6 @@
 		</div>
 	</div>
 	<div id="container_principale">
-		MAIN
 		
 	</div>
 </body>
