@@ -33,7 +33,9 @@
 		</div>
 	</div>
 	<div id="container_principale">
-		
+		<?php
+			include 'upload/submit_uploadForm.php';
+		?>
 	</div>
 </body>
 </html>
