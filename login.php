@@ -11,10 +11,8 @@
                 
                 <div class="input">
                     <p>
-                        Username
-                        <input name="nome" type="text" class="textbox" value=""/>
-                        Password
-                        <input name="password" type="password" class="textbox" value="">
+                        Username Ateneo
+                        <input name="Nome utente di ateneo" type="text" class="textbox" value=""/>
                     </p>
                     <input class="bottoneLogin" name="invia" type="submit" value="Invia"/>
                 </div>

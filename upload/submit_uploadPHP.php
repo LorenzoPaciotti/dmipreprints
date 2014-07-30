@@ -7,10 +7,14 @@ $pathAndName = "/home/lorenzo/uploads/".$fileName;
 // Run the move_uploaded_file() function here
 $moveResult = move_uploaded_file($fileTmpLoc, $pathAndName);
 print_r(error_get_last());
-echo "</br>";
-// Evaluate the value returned from the function if needed
+
+//INSERIMENTO IN DATABASE
+
+
+
+
 if ($moveResult == true) {
-    echo "File has been moved from " . $fileTmpLoc . " to" . $pathAndName;
+    echo "DEBUG: File has been moved from " . $fileTmpLoc . " to" . $pathAndName;
 } else {
      echo "ERROR: File not moved correctly";
 }

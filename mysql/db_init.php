@@ -1,28 +1,19 @@
 <?php
+
 #CHECK SESSIONE
-
-
 #inizializzazione db mysql
-$db_connect;
-function connettiDBManager(){
-    #CONNESSIONE SERVER DB
+include 'db_conn.php';
+
+function CreaDB() {
     global $db_connect;
-    $db_connect = new mysqli('localhost', 'root@localhost', null) or die('errore connessione mysql');
-    //$errore = mysqli_errno($db_connect);
-    //echo 'connesso a MySql';
-}
-
-function CreaDB(){
-
     connettiDBManager();
-    global $db_connect;
 
     #CREAZIONE DB
     $query = 'CREATE DATABASE if not exists DMIPrePrints';
     $result = mysqli_query($db_connect, $query) or die('Impossibile creare schema');
-    
+
     #CREAZIONE TABELLE
-    mysqli_select_db($db_connect,'DMIPrePrints') or die('Could not select database');
+    mysqli_select_db($db_connect, 'DMIPrePrints') or die('Could not select database');
 
     #AUTORI contiene tutti i possibili utenti del servizio (professori o altri ruoli)
     $query = 'CREATE TABLE if not exists AUTORI (id_AUTORI INT NOT NULL AUTO_INCREMENT PRIMARY KEY, nome VARCHAR (50), cognome VARCHAR(50), uid VARCHAR(9) NOT NULL)';
@@ -34,8 +25,7 @@ function CreaDB(){
 
 
     #CHIUSURA CONNESSIONE SERVER DB
-    mysqli_close($db_connect) or die ('problema chiusura connessione db');
+    mysqli_close($db_connect) or die('problema chiusura connessione db');
     echo 'chiusa connessione db';
     return $result;
-    
 }
