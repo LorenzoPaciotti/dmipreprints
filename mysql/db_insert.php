@@ -5,8 +5,7 @@
 include 'db_conn.php';
 
 ##INSERIMENTO PAPER
-
-function inserisci_paper($titolo, $autore, $abstract, $file_path) {
+function inserisciPaper($titolo, $autore, $abstract, $file_path) {
     global $db_connect;
     #db_conn.php -> connettiDBManager()
     connettiDBManager();
@@ -15,6 +14,8 @@ function inserisci_paper($titolo, $autore, $abstract, $file_path) {
     mysqli_select_db($db_connect,'DMIPrePrints') or die('Could not select database');
     
     $query = 'INSERT INTO PRINTS(titolo,autore,abstract,percorso) values ('.$titolo.','.$autore.','.$abstract.','.$file_path.')';
+    print $query;
     $result = mysqli_query($db_connect, $query) or die('Query failed: ' . mysqli_error());
     print $result;
 }
+?>

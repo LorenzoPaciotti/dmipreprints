@@ -1,9 +1,9 @@
 <?php
 
-//include 'mysql/db_conn.php';
+/*include 'mysql/db_conn.php';
 
 //connettiDBManager();
-//disconnettiDBManager();
+//disconnettiDBManager();*/
 
 include 'mysql/db_init.php';
 CreaDB();
