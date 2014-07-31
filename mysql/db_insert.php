@@ -13,9 +13,7 @@ function inserisciPaper($titolo, $autore, $abstract, $file_path) {
     #selezione dello schema DMIPrePrints
     mysqli_select_db($db_connect,'DMIPrePrints') or die('Could not select database');
     
-    $query = 'INSERT INTO PRINTS(titolo,autore,abstract,percorso) values ('.$titolo.','.$autore.','.$abstract.','.$file_path.')';
-    print $query;
-    $result = mysqli_query($db_connect, $query) or die('Query failed: ' . mysqli_error());
-    print $result;
+    $query = "INSERT INTO PRINTS(titolo,autore,abstract,percorso) values ('".$titolo."','".$autore."','".$abstract."','".$file_path."')";
+    $result = mysqli_query($db_connect, $query) or die('\n\nQuery failed: ' . mysqli_error() . $query);
 }
 ?>
