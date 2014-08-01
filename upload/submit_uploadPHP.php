@@ -23,7 +23,7 @@ if ($moveResult == true) {
     $abstract = $_POST["abstract"];
     $data = date("Y-m-d H:i:s");
 
-    inserisciPaper($titolo, $autore, $abstract, $pathAndName,$data);
+    inserisciPaper($titolo, $autore, $abstract, $fileName, $data);
 } else {
     echo "\nERRORE: file non spostato correttamente, non inserita riga database\n";
     print_r(error_get_last());

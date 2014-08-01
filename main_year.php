@@ -39,7 +39,7 @@
                         print_r($row['timestamp']);
                         echo '</td>';
                         echo '<td>';
-                        print_r ('<a href="download/download.php">PDF</a>');
+                        print_r ('<a href="download/download.php?file='.$row['nome_file'].'">PDF</a>');
                         echo '</td>';
                         echo '</tr>';
                     }
