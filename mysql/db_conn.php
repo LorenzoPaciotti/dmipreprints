@@ -13,6 +13,11 @@ function connettiDBManager() {
     echo "connesso\n";
 }
 
+function selezionaSchema(){
+    global $db_connect;
+    mysqli_select_db($db_connect, 'DMIPrePrints') or die('Could not select database');
+}
+
 function disconnettiDBManager(){
     
 }

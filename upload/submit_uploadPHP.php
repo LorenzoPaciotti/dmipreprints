@@ -9,7 +9,7 @@ $fileTmpLoc = $_FILES["userfile"]["tmp_name"];
 $pathAndName = "/home/lorenzo/uploads/" . $fileName;
 // spostamento del file inviato alla cartella di storage
 $moveResult = move_uploaded_file($fileTmpLoc, $pathAndName);
-print_r(error_get_last());
+
 
 
 ##DEBUG
@@ -21,10 +21,12 @@ if ($moveResult == true) {
     ###DEBUG
     $autore = 'testuid';
     $abstract = $_POST["abstract"];
+    $data = date("Y-m-d H:i:s");
 
-    inserisciPaper($titolo, $autore, $abstract, $pathAndName);
+    inserisciPaper($titolo, $autore, $abstract, $pathAndName,$data);
 } else {
-    echo "\nERROR: file non spostato correttamente, non inserita riga database\n";
+    echo "\nERRORE: file non spostato correttamente, non inserita riga database\n";
+    print_r(error_get_last());
 }
 ##
 ?>
