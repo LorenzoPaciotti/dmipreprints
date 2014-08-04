@@ -1,6 +1,6 @@
 <?php
 
-include '../mysql/db_insert.php';
+include_once '../mysql/db_insert.php';
 
 // lettura dati dall'array $_FILES
 $fileName = $_FILES["userfile"]["name"];
@@ -22,8 +22,9 @@ if ($moveResult == true) {
     $autore = 'testuid';
     $abstract = $_POST["abstract"];
     $data = date("Y-m-d H:i:s");
+    $anno = date("Y");
 
-    inserisciPaper($titolo, $autore, $abstract, $fileName, $data);
+    inserisciPaper($titolo, $autore, $abstract, $fileName, $data, $anno);
 } else {
     echo "\nERRORE: file non spostato correttamente, non inserita riga database\n";
     print_r(error_get_last());
