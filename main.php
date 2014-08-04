@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>DMIPreprints</title>
@@ -12,19 +13,49 @@
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/style-desktop.css" />
         </noscript>
+        <link rel="stylesheet" href="css/main.css" />
         <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-
-
-
-
+        
     </head>
     <body>
+        <!-- JAVASCRIPT -->
+        <script>
+            //CLICK LISTENER
+            $(document).ready(function() {
+                $("#bottone_anno").click(function() {
+                    vistaAnno();
+                });
+            });
+            //FUNZIONI
+            function apriContenitoreDinamico() {
+
+//                $("#contenitore_dinamico").toggleClass("contenitore_dinamico_espanso");
+//                var className = $('#contenitore_dinamico').attr('class');
+//                if (className === "contenitore_dinamico_base") {
+//                    $("#contenitore_dinamico").empty();
+//                }
+            }
+            function vistaAnno() {
+                $("#contenitore_dinamico").load("main_listByYear.php");
+
+//                apriContenitoreDinamico();
+//                var className = $('#contenitore_dinamico').attr('class');
+//                if (className !== "contenitore_dinamico_base") {
+//                    
+//                }
+//                return true;
+            }
+
+        </script>
+        <!-- -->
+
+
+
         <div id="header-wrapper">
             <div class="container">
                 <div class="row">
                     <div class="12u">
-
                         <header id="header">
                             <h1><a href="#" id="logo">DMI Preprints</a></h1>
                             <nav id="nav">
@@ -37,18 +68,19 @@
                 </div>
             </div>
         </div>
-
-        <div id="menu_sx">
-            <div>
-                <h1>Sidebar</h1>     
-                <h2>Categorie</h2>          
-                <ul>             
-                    <li><button> list by year</li>             
-                    <li><button> search by keyword</li>
-                </ul>
+        <div id="header-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="12u">
+                        <ul>
+                            <li><button id="bottone_anno"> list by year</li>
+                            <li><button id="bottone_keyword"> search by keyword</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-
         </div>
+
         <div id="contenitore_dinamico">
         </div>
 

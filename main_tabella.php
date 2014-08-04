@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 <html>
     <head>
-                <link rel="stylesheet" type="text/css" href="css/tabelle.css">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/tabelle.css">
     </head>
 </html>
 <?php
@@ -25,5 +25,4 @@ function stampaTabella($resultPerAnno) {
     }
     echo '</table>';
 }
-
 ?>
