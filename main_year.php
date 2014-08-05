@@ -1,11 +1,11 @@
 <?php
 
-#recupero lista anni nel db
-
+#richiesta anni nel db
+include_once 'mysql/db_select.php';
+$lista_anni = listaAnni();
 
 
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,39 +13,40 @@
         <style>
             #left{
                 max-width: 20%;
-                text-align: left;
+                text-align: center;
             }
             #right{
                 max-width: 40%;
-                text-align: right;
+                text-align: center;
             }
             #keyword_container{
                 display: table-row;
+                text-align: center;
             }
         </style>
     </head>
     <body>
         <script>
             //FUNZIONI
-            function ris() {
-                var quer = $('#input_keyword').val();
-                $("#right_content").load("main_keyword_content.php", {query : quer});
+            function ris(quer) {
+                $("#right_content").load("main_year_content.php", {query : quer});
             }
-            //CLICK LISTENER
-            $(document).ready(function() {
-                $("#button_cerca_keyword").click(function() {
-                    ris();
-                });
-            });
         </script>
         <div id="keyword_container">
             <div id="left">
                 <div id="left_content">
                     <ul>
-                        <li>
-                            <input placeholder="keyword" id="input_keyword">
-                            <button id="button_cerca_keyword">Search</button>
-                        </li>
+                    <?php
+                    while ($row = mysqli_fetch_array($lista_anni)){
+                        $annoRiga = $row['anno'];
+                        echo '<li>';
+                        echo '<a href="#" onclick=(ris('.$annoRiga.'))>';
+                        print $row['anno'];
+                        echo '</a>';
+                        echo '</li>';
+                    }
+                    
+                    ?>
                     </ul>
                 </div>
 

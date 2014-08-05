@@ -34,7 +34,7 @@
             });
             //FUNZIONI
             function vistaAnno() {
-                $("#contenitore_dinamico").load("main_listByYear.php");
+                $("#contenitore_dinamico").load("main_year.php");
             }
 
             function vistaKeyword() {

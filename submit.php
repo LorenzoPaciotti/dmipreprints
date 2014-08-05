@@ -36,8 +36,9 @@
 		</div>
 	</div>
 	<div id="container_principale">
+            **LOGIN**
 		<?php
-			include 'upload/submit_uploadForm.php';
+			include_once 'upload/submit_uploadForm.php';
 		?>
 	</div>
 </body>
