@@ -4,7 +4,7 @@
         <title>DMIPreprints</title>
         <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
         <script src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
         <script src="js/config.js"></script>
         <script src="js/skel.min.js"></script>
         <script src="js/skel-panels.min.js"></script>
@@ -24,7 +24,14 @@
             //CLICK LISTENER
             $(document).ready(function() {
                 $("#bottone_anno").click(function() {
+                    alert('anno');
                     vistaAnno();
+                });
+            });
+            $(document).ready(function() {
+                $("#bottone_keyword").click(function() {
+                    //alert('keyword');
+                    vistaKeyword();
                 });
             });
             //FUNZIONI
@@ -38,6 +45,17 @@
             }
             function vistaAnno() {
                 $("#contenitore_dinamico").load("main_listByYear.php");
+
+//                apriContenitoreDinamico();
+//                var className = $('#contenitore_dinamico').attr('class');
+//                if (className !== "contenitore_dinamico_base") {
+//                    
+//                }
+//                return true;
+            }
+            
+            function vistaKeyword() {
+                $("#contenitore_dinamico").load("main_keyword.php");
 
 //                apriContenitoreDinamico();
 //                var className = $('#contenitore_dinamico').attr('class');
@@ -68,13 +86,13 @@
                 </div>
             </div>
         </div>
-        <div id="header-wrapper">
+        <div id="header-wrapper" text-align="center">
             <div class="container">
                 <div class="row">
                     <div class="12u">
                         <ul>
-                            <li><button id="bottone_anno"> list by year</li>
-                            <li><button id="bottone_keyword"> search by keyword</li>
+                            <li><button id="bottone_anno">list by year</li>
+                            <li><button id="bottone_keyword">search by keyword</li>
                         </ul>
                     </div>
                 </div>
