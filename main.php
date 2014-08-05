@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="css/main.css" />
         <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-        
+
     </head>
     <body>
         <!-- JAVASCRIPT -->
@@ -24,45 +24,21 @@
             //CLICK LISTENER
             $(document).ready(function() {
                 $("#bottone_anno").click(function() {
-                    alert('anno');
                     vistaAnno();
                 });
             });
             $(document).ready(function() {
                 $("#bottone_keyword").click(function() {
-                    //alert('keyword');
                     vistaKeyword();
                 });
             });
             //FUNZIONI
-            function apriContenitoreDinamico() {
-
-//                $("#contenitore_dinamico").toggleClass("contenitore_dinamico_espanso");
-//                var className = $('#contenitore_dinamico').attr('class');
-//                if (className === "contenitore_dinamico_base") {
-//                    $("#contenitore_dinamico").empty();
-//                }
-            }
             function vistaAnno() {
                 $("#contenitore_dinamico").load("main_listByYear.php");
-
-//                apriContenitoreDinamico();
-//                var className = $('#contenitore_dinamico').attr('class');
-//                if (className !== "contenitore_dinamico_base") {
-//                    
-//                }
-//                return true;
             }
-            
+
             function vistaKeyword() {
                 $("#contenitore_dinamico").load("main_keyword.php");
-
-//                apriContenitoreDinamico();
-//                var className = $('#contenitore_dinamico').attr('class');
-//                if (className !== "contenitore_dinamico_base") {
-//                    
-//                }
-//                return true;
             }
 
         </script>

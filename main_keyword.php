@@ -21,20 +21,15 @@
         <script>
             //FUNZIONI
             function ris() {
-
                 var quer = $('#input_keyword').val();
-                alert(quer);
                 $("#right_content").load("main_keyword_content.php", {query : quer});
             }
             //CLICK LISTENER
             $(document).ready(function() {
                 $("#button_cerca_keyword").click(function() {
-                    alert('button_cerca_keyword');
                     ris();
                 });
             });
-
-
         </script>
         <div id="keyword_container">
             <div id="left">
