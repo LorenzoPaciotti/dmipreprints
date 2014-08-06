@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>DMIPreprints</title>
+    <head>
+        <title>DMIPreprints</title>
         <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
         <script src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
@@ -14,32 +14,51 @@
         <link rel="stylesheet" href="css/style-desktop.css" />
         </noscript>
         <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
-	<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-</head>
-<body>
-	<div id="header-wrapper">
-		<div class="container">
-			<div class="row">
-				<div class="12u">
-					
-					<header id="header">
-						<h1><a href="#" id="logo">DMI Preprints</a></h1>
-						<nav id="nav">
-							<a href="main.php">Search Preprint</a>
-							<a href="submit.php" class="current-page-item">Submit Preprint</a>
-							<a href="logout.php">Logout</a>
-						</nav>
-					</header>
-					
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="container_principale">
-            **LOGIN**
-		<?php
-			include_once 'upload/submit_uploadForm.php';
-		?>
-	</div>
-</body>
+        <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    </head>
+    <body>
+        <script>
+            //FUNZIONI
+            function ris() {
+                var quer = $('#input_uid').val();
+                $("#right_content").load("upload/submit_uploadForm.php", {uid: quer});
+            }
+            //CLICK LISTENER
+            $(document).ready(function() {
+                $("#button_login").click(function() {
+                    ris();
+                });
+            });
+        </script>
+        <div id="header-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="12u">
+
+                        <header id="header">
+                            <h1><a href="#" id="logo">DMI Preprints</a></h1>
+                            <nav id="nav">
+                                <a href="main.php">Search Preprint</a>
+                                <a href="submit.php" class="current-page-item">Submit Preprint</a>
+                                <a href="logout.php">Logout</a>
+                            </nav>
+                        </header>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="container_principale">
+            <?php
+            include_once 'submit_login.php';
+            ?>
+            <div id="left_content">
+                <input id="input_uid" placeholder="uid">
+                <button id="button_login">Login</button>
+            </div>
+            <div id="right_content">
+                right content
+            </div>
+        </div>
+    </body>
 </html>
