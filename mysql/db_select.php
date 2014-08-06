@@ -5,7 +5,7 @@ include_once 'mysql/db_sec.php';
 connettiDBManager();
 selezionaSchema();
 
-function listaAnni(){
+function listaAnni() {
     global $db_connect;
     $query = 'select distinct(anno) from PRINTS';
     $query = pulisciQuery($query);
@@ -25,14 +25,25 @@ function interrogaPerAnno($anno) {
     return $result;
 }
 
-function interrogaPerKeyword($keyword){
+function interrogaPerKeyword($keyword) {
     global $db_connect;
-    $keyword = '"%'.$keyword.'%"';
-    $query = 'select * from PRINTS where titolo LIKE '.$keyword.' OR abstract LIKE '.$keyword.' OR autore LIKE '.$keyword;
+    $keyword = '"%' . $keyword . '%"';
+    $query = 'select * from PRINTS where titolo LIKE ' . $keyword . ' OR abstract LIKE ' . $keyword . ' OR autore LIKE ' . $keyword;
     $query = pulisciQuery($query);
     echo $query;
     $result = mysqli_query($db_connect, $query) or die(mysqli_error($db_connect));
     mysqli_close($db_connect);
     return $result;
 }
+
+function interrogaPerUID($uid) {
+    global $db_connect;
+    $query = 'select * from PRINTS where uid=' . $uid;
+    $query = pulisciQuery($query);
+    echo $query;
+    $result = mysqli_query($db_connect, $query) or die(mysqli_error($db_connect));
+    mysqli_close($db_connect);
+    return $result;
+}
+
 ?>

@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['uid'])){
-    include_once '../auth/auth.php';
+    include_once '../authorization/auth.php';
     
     $auth_result = LDAPAuth($_POST['uid']);
 }
