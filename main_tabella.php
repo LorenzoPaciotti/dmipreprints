@@ -11,10 +11,18 @@ function stampaRigaLinkPDF($nome_file) {
 }
 
 function stampaTabella($resultPerAnno) {
-    echo 'tabella';
     echo '<table class="tabelle">';
     while ($row = mysqli_fetch_array($resultPerAnno)) {
         echo '<tr>';
+        echo '<td>';
+        print_r($row['id_PRINTS']);
+        echo '</td>';
+        echo '<td>';
+        print_r($row['titolo']);
+        echo '</td>';
+        echo '<td>';
+        print_r($row['autore']);
+        echo '</td>';
         echo '<td>';
         print_r($row['timestamp']);
         echo '</td>';

@@ -28,7 +28,7 @@ function interrogaPerAnno($anno) {
 function interrogaPerKeyword($keyword){
     global $db_connect;
     $keyword = '"%'.$keyword.'%"';
-    $query = 'select * from PRINTS where titolo LIKE '.$keyword;
+    $query = 'select * from PRINTS where titolo LIKE '.$keyword.' OR abstract LIKE '.$keyword.' OR autore LIKE '.$keyword;
     $query = pulisciQuery($query);
     echo $query;
     $result = mysqli_query($db_connect, $query) or die(mysqli_error($db_connect));
