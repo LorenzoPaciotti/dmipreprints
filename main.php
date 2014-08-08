@@ -34,11 +34,11 @@
             });
             //FUNZIONI
             function vistaAnno() {
-                $("#contenitore_dinamico").load("main_year.php");
+                $("#contenitore_dinamico").load("search/main_year.php");
             }
 
             function vistaKeyword() {
-                $("#contenitore_dinamico").load("main_keyword.php");
+                $("#contenitore_dinamico").load("search/main_keyword.php");
             }
 
         </script>
@@ -53,8 +53,8 @@
                         <header id="header">
                             <h1><a href="#" id="logo">DMI Preprints</a></h1>
                             <nav id="nav">
-                                <a href="main.php" class="current-page-item">Search Preprint</a>
-                                <a href="submit.php">Submit Preprint</a>
+                                <a href="main.php" class="current-page-item">Search a Preprint</a>
+                                <a href="submit.php">Reserved Area</a>
                             </nav>
                         </header>
 

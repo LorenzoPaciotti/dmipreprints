@@ -2,7 +2,7 @@
 
 #CHECK SESSIONE
 ##END CHECK SESSIONE
-include_once 'db_conn.php';
+require_once getcwd().'/../mysql/db_conn.php';
 
 function pulisciQuery($query) {
     

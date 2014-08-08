@@ -1,11 +1,3 @@
-<?php
-
-#recupero lista anni nel db
-
-
-
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,7 +21,7 @@
             //FUNZIONI
             function ris() {
                 var quer = $('#input_keyword').val();
-                $("#right_content").load("main_keyword_content.php", {query : quer});
+                $("#right_content").load("search/main_keyword_content.php", {query : quer});
             }
             //CLICK LISTENER
             $(document).ready(function() {

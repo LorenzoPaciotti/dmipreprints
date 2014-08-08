@@ -1,7 +1,7 @@
 <?php
 
 #richiesta anni nel db
-include_once 'mysql/db_select.php';
+require_once getcwd().'/../mysql/db_select.php';
 $lista_anni = listaAnni();
 
 
@@ -29,7 +29,7 @@ $lista_anni = listaAnni();
         <script>
             //FUNZIONI
             function ris(quer) {
-                $("#right_content").load("main_year_content.php", {query : quer});
+                $("#right_content").load("search/main_year_content.php", {query : quer});
             }
         </script>
         <div id="keyword_container">

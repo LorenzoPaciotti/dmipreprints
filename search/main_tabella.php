@@ -15,9 +15,6 @@ function stampaTabella($resultPerAnno) {
     while ($row = mysqli_fetch_array($resultPerAnno)) {
         echo '<tr>';
         echo '<td>';
-        print_r($row['id_PRINTS']);
-        echo '</td>';
-        echo '<td>';
         print_r($row['titolo']);
         echo '</td>';
         echo '<td>';

@@ -17,19 +17,6 @@
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
     </head>
     <body>
-        <script>
-            //FUNZIONI
-            function ris() {
-                var quer = $('#input_uid').val();
-                $("#right_content").load("upload/submit_uploadForm.php", {uid: quer});
-            }
-            //CLICK LISTENER
-            $(document).ready(function() {
-                $("#button_login").click(function() {
-                    ris();
-                });
-            });
-        </script>
         <div id="header-wrapper">
             <div class="container">
                 <div class="row">
@@ -38,9 +25,8 @@
                         <header id="header">
                             <h1><a href="#" id="logo">DMI Preprints</a></h1>
                             <nav id="nav">
-                                <a href="main.php">Search Preprint</a>
-                                <a href="submit.php" class="current-page-item">Submit Preprint</a>
-                                <a href="logout.php">Logout</a>
+                                <a href="main.php">Search a Preprint</a>
+                                <a href="submit.php" class="current-page-item">Reserved Area</a>
                             </nav>
                         </header>
 
@@ -50,15 +36,8 @@
         </div>
         <div id="container_principale">
             <?php
-            include_once 'submit_login.php';
+            include_once $root_path.'reserved/submit_loginCheck.php';
             ?>
-            <div id="left_content">
-                <input id="input_uid" placeholder="uid">
-                <button id="button_login">Login</button>
-            </div>
-            <div id="right_content">
-                right content
-            </div>
         </div>
     </body>
 </html>
