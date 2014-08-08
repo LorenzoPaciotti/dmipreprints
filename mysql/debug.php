@@ -5,5 +5,5 @@
 //connettiDBManager();
 //disconnettiDBManager();*/
 
-include 'mysql/db_init.php';
+require_once getcwd().'/../mysql/db_init.php';
 CreaDB();
