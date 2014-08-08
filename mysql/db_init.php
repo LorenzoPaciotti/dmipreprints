@@ -13,7 +13,7 @@ function CreaDB() {
     $result = mysqli_query($db_connect, $query) or die('Impossibile creare schema');
 
     #SELEZIONE SCHEMA
-    mysqli_select_db($db_connect, 'DMIPrePrints') or die('Could not select database');
+    mysqli_select_db($db_connect, 'DMIPrePrints') or die('Impossibile selezionare lo schema');
 
     ##CREAZIONE TABELLE
     #AUTORI contiene tutti i possibili utenti del servizio (professori o altri ruoli)
