@@ -1,15 +1,17 @@
 <?php
-if(isset($_SESSION['logged'])){
+session . start();
+if (isset($_SESSION['logged_user'])) {
     //non mostrare login perché è già autenticato
-    if(isset($_SESSIONE['moderator'])){
+    echo caso1;
+
+    if (isset($_SESSION['logged_mod'])) {
         //sessione moderatore
+        echo caso2;
     }
-}else{
+} else {
     //deve fare login
-    
+    echo caso3;
 }
-
-
 ?>
 <html>
     <head>
