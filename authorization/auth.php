@@ -33,11 +33,11 @@ function LDAPAuth($UID) {
 
 //RADIUS
 function RADIUSAuth($UID, $PASSWORD) {
-    
+
     //DA METTERE SUL CONF
     $ip_radius_server = "192.168.158.128";
     $shared_secret = "boh";
-    
+
     $username = $UID;
     $password = $PASSWORD;
     require_once('radius.class.php');

@@ -4,7 +4,7 @@
         <title>DMIPreprints</title>
         <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
         <script src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
         <script src="js/config.js"></script>
         <script src="js/skel.min.js"></script>
         <script src="js/skel-panels.min.js"></script>
@@ -36,7 +36,7 @@
         </div>
         <div id="container_principale">
             <?php
-            require_once getcwd().'/reserved/submit_loginChooser.php';
+            require_once getcwd() . '/reserved/submit_loginChooser.php';
             ?>
         </div>
     </body>

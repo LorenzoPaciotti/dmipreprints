@@ -6,6 +6,7 @@
                 var uidV = $('#input_uid').val();
                 var pwV = $('#input_pw').val();
                 $("#left_content").load("reserved/submit_loginCheck.php", {uid: uidV, pw:pwV});
+                $("#right_content").load("reserved/submit_loginChooser.php");
             }
             //CLICK LISTENER
             $(document).ready(function() {
