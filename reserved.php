@@ -26,7 +26,7 @@
                             <h1><a href="#" id="logo">DMI Preprints</a></h1>
                             <nav id="nav">
                                 <a href="main.php">Search a Preprint</a>
-                                <a href="submit.php" class="current-page-item">Reserved Area</a>
+                                <a href="reserved.php" class="current-page-item">Reserved Area</a>
                             </nav>
                         </header>
 
@@ -36,7 +36,7 @@
         </div>
         <div id="container_principale">
             <?php
-            include_once $root_path.'reserved/submit_loginCheck.php';
+            require_once getcwd().'/reserved/submit_loginChooser.php';
             ?>
         </div>
     </body>

@@ -10,7 +10,6 @@ function LDAPAuth($UID) {
 // connessione a LDAP
     $ldapconn = ldap_connect($ldaphost, $ldapport) or die("Could not connect to $ldaphost");
     ldap_set_option($ldapconn, LDAP_OPT_PROTOCOL_VERSION, 3);
-
     $ds = $ldapconn;
     $dn = "ou=users,dc=dmi,dc=unipg,dc=it";
     //l'utente deve avere la licenza all'uso di DMIPrePrints
