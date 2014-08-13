@@ -1,6 +1,6 @@
 <?php
 
-include_once getcwd().'/../mysql/db_insert.php';
+require_once getcwd().'/../mysql/db_insert.php';
 
 // lettura dati dall'array $_FILES
 $fileName = $_FILES["userfile"]["name"];

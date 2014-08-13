@@ -1,6 +1,6 @@
 <button onclick="logout()">logout</button>
 <div id="contenitore">
-    <form enctype="multipart/form-data" action="upload/submit_uploadPHP.php" method="POST">
+    <form enctype="multipart/form-data" action="reserved/submit_uploadPHP.php" method="POST">
         <ul>
             <li>
                 <h2>Submit a Preprint</h2>
@@ -14,8 +14,6 @@
                 <input type="text" name="abstract"/>
                 <label for="collaboratori">Collaboratori:</label>
                 <input type="text" name="collaboratori"</label>
-
-
             </li>
             <li>
                 <!-- parte file -->
