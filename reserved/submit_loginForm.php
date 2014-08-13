@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <script>
@@ -5,8 +6,11 @@
             function ris() {
                 var uidV = $('#input_uid').val();
                 var pwV = $('#input_pw').val();
-                $("#left_content").load("reserved/submit_loginCheck.php", {uid: uidV, pw:pwV});
-                $("#right_content").load("reserved/submit_loginChooser.php");
+                $("#left_content").load("reserved/submit_loginCheck.php", {uid: uidV, pw: pwV}, function() {
+                    alert('ris callback');
+                    $("#right_content").load("reserved/submit_loginChooser.php");
+                    location.reload(true);
+                });
             }
             //CLICK LISTENER
             $(document).ready(function() {

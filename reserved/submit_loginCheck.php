@@ -9,6 +9,7 @@ if (isset($_POST['uid']) && isset($_POST['pw'])) {
 
 
     require_once getcwd() . '/../authorization/auth.php';
+    $filteredUID = "rz690001"; //TEST TEST TEST
     if (LDAPAuth($filteredUID)) {
         print "autorizzazione OK";
         //TEST
@@ -20,14 +21,12 @@ if (isset($_POST['uid']) && isset($_POST['pw'])) {
             // pannello utente o amm
             // e parte la sessione
         } else {
-            print "NO autenticazione\n";
+            echo "\nNO autenticazione\n";
         }
     } else {
-        print "NO autorizzazione\n";
+        echo "\nNO autorizzazione\n";
     }
 } else {
-    print_r($_POST . "\n");
-
     echo 'DEBUG: parametri POST non impostati';
 }
 ?>

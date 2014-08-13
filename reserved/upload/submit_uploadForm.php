@@ -1,13 +1,3 @@
-<?php
-if(isset($_POST['uid'])){
-    include_once getcwd().'/../authorization/auth.php';
-    
-    $auth_result = LDAPAuth($_POST['uid']);
-}
-
-
-
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,7 +5,7 @@ if(isset($_POST['uid'])){
         <link rel="stylesheet" href="/css/uploadForm.css"/>
 
     </head>
-    <body>
+    <body id="upload_body">
         <div id="contenitore">
             <form enctype="multipart/form-data" action="upload/submit_uploadPHP.php" method="POST">
                 <ul>
