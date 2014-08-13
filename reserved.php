@@ -19,9 +19,11 @@
     <body>
         <script>
             function logout() {
-                $("#container_principale").load("reserved/logout.php");
-                $("#container_principale").load("reserved/submit_loginChooser.php");
-                location.reload(true);
+                $("#container_principale").load("reserved/logout.php", function() {
+                    $("#container_principale").load("reserved/submit_loginChooser.php", function() {
+                        location.reload(true);
+                    });
+                });
             }
         </script>
         <div id="header-wrapper">
