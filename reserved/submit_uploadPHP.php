@@ -1,12 +1,12 @@
 <?php
 
-require_once getcwd().'/../mysql/db_insert.php';
+require_once getcwd() . '/../mysql/db_insert.php';
 
 // lettura dati dall'array $_FILES
-$fileName = date("Y-m-d_H-i-s").'.pdf';
+$fileName = date("Y-m-d_H-i-s") . '.pdf';
 $fileTmpLoc = $_FILES["userfile"]["tmp_name"];
 // Path e filename
-$pathAndName = getcwd()."/uploads/" . $fileName;
+$pathAndName = getcwd() . "/uploads/" . $fileName;
 // spostamento del file inviato alla cartella di storage
 $moveResult = move_uploaded_file($fileTmpLoc, $pathAndName);
 print_r(error_get_last());

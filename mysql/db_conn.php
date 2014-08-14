@@ -1,13 +1,11 @@
 <?php
-
-#VARIABILE GLOBALE PER LA CONNESSIONE AL DB, VIENE USATA DA TUTTI I FILE DB_*.PHP
+require_once getcwd().'/../impost_car.php';
 $db_connect;
 
-#CONNESSIONE SERVER DB
 function connettiDBManager() {
-    
-    global $db_connect;
-    $db_connect = new mysqli('localhost', 'root', 'root') or die('errore connessione mysql');
+    global $db_connect, $mysql_addr, $mysql_user, $mysql_pass;
+    print_r($mysql_addr.$mysql_user.$mysql_pass);
+    $db_connect = new mysqli($mysql_addr, $mysql_user, $mysql_pass) or die('errore connessione mysql');
     $errore = mysqli_errno($db_connect);
     print "codice stato sql alla connessione ---> ".$errore;
 }

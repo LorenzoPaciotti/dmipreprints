@@ -1,5 +1,4 @@
 <?php
-#inizializzazione db mysql
 require_once getcwd().'/../mysql/db_conn.php';
 
 function CreaDB() {

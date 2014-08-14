@@ -6,7 +6,6 @@ function pulisciQuery($query) {
 }
 
 ##INSERIMENTO PAPER
-
 function inserisciPaper($titolo, $autore, $abstract, $nome_file, $data, $anno) {
     global $db_connect;
     connettiDBManager();
@@ -18,6 +17,7 @@ function inserisciPaper($titolo, $autore, $abstract, $nome_file, $data, $anno) {
 
     pulisciQuery($query);
     $result = mysqli_query($db_connect, $query) or die('\n\nQuery failed: ' . mysqli_error() . $query);
+    return $result;
 }
 
 ?>

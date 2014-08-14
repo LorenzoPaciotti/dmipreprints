@@ -1,13 +1,8 @@
 <?php
-
+require_once getcwd().'/../impost_car.php';
 function LDAPAuth($UID) {
-
-// variabili connessione LDAP DA STORARE SU CONF
-    $ldaphost = "192.168.158.128";  // indirizzo host LDAP
-    $ldapport = 389;                // porta su host LDAP
-    //
-    //
 // connessione a LDAP
+    global $ldaphost, $ldapport;
     $ldapconn = ldap_connect($ldaphost, $ldapport) or die("Could not connect to $ldaphost");
     ldap_set_option($ldapconn, LDAP_OPT_PROTOCOL_VERSION, 3);
     $ds = $ldapconn;
@@ -33,10 +28,6 @@ function LDAPAuth($UID) {
 
 //RADIUS
 function RADIUSAuth($UID, $PASSWORD) {
-
-    //DA METTERE SUL CONF
-    $ip_radius_server = "192.168.158.128";
-    $shared_secret = "boh";
 
     $username = $UID;
     $password = $PASSWORD;
