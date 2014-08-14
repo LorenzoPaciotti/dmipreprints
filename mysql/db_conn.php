@@ -9,7 +9,7 @@ function connettiDBManager() {
     global $db_connect;
     $db_connect = new mysqli('localhost', 'root', 'root') or die('errore connessione mysql');
     $errore = mysqli_errno($db_connect);
-    print "codice stato sql alla connessione --->".$errore;
+    print "codice stato sql alla connessione ---> ".$errore;
 }
 
 function selezionaSchema(){

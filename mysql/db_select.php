@@ -34,11 +34,12 @@ function interrogaPerAnno($anno, $moderatore) {
 function interrogaPerKeyword($keyword, $moderatore) {
     global $db_connect;
     $keyword = '"%' . $keyword . '%"';
-    $query = 'select * from PRINTS where titolo LIKE ' . $keyword . ' OR abstract LIKE ' . $keyword . ' OR autore LIKE ' . $keyword;
+    $query = 'select * from PRINTS where (titolo LIKE ' . $keyword . ' OR abstract LIKE ' . $keyword . ' OR autore LIKE ' . $keyword.') AND approvato = 1';
     
-    //presentiamo al pubblico solo i paper approvati dal moderatore
-    if (!$moderatore){
-        $query = $query.' AND approvato=1';
+    //query per moderatore
+    $moderatore = 1; //TEST
+    if ($moderatore){
+        $query = 'select * from PRINTS where titolo LIKE ' . $keyword . ' OR abstract LIKE ' . $keyword . ' OR autore LIKE ' . $keyword;
     }
     
     $query = pulisciQuery($query, $moderatore);
@@ -52,6 +53,7 @@ function interrogaPerUID($uid, $moderatore) {
     global $db_connect;
     $query = 'select * from PRINTS where uid=' . $uid;
     
+    $moderatore = 1;//TEST
     //presentiamo al pubblico solo i paper approvati dal moderatore
     if (!$moderatore){
         $query = $query.' AND approvato=1';

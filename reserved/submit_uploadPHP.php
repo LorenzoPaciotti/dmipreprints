@@ -3,14 +3,13 @@
 require_once getcwd().'/../mysql/db_insert.php';
 
 // lettura dati dall'array $_FILES
-$fileName = $_FILES["userfile"]["name"];
+$fileName = date("Y-m-d_H-i-s").'.pdf';
 $fileTmpLoc = $_FILES["userfile"]["tmp_name"];
 // Path e filename
-$pathAndName = "/home/lorenzo/uploads/" . $fileName;
+$pathAndName = getcwd()."/uploads/" . $fileName;
 // spostamento del file inviato alla cartella di storage
 $moveResult = move_uploaded_file($fileTmpLoc, $pathAndName);
-
-
+print_r(error_get_last());
 
 ##DEBUG
 if ($moveResult == true) {
@@ -18,7 +17,7 @@ if ($moveResult == true) {
     //INSERIMENTO IN DATABASE
     $titolo = $_POST["titolo"];
     $autore = $_POST["uid"];
-    ###DEBUG
+    //TEST
     $autore = 'testuid';
     $abstract = $_POST["abstract"];
     $data = date("Y-m-d H:i:s");
@@ -27,7 +26,6 @@ if ($moveResult == true) {
     inserisciPaper($titolo, $autore, $abstract, $fileName, $data, $anno);
 } else {
     echo "\nERRORE: file non spostato correttamente, non inserita riga database\n";
-    print_r(error_get_last());
 }
 ##
 ?>

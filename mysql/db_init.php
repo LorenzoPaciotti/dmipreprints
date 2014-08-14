@@ -1,6 +1,4 @@
 <?php
-
-#CHECK SESSIONE
 #inizializzazione db mysql
 require_once getcwd().'/../mysql/db_conn.php';
 

@@ -1,7 +1,4 @@
 <?php
-
-#CHECK SESSIONE
-##END CHECK SESSIONE
 require_once getcwd().'/../mysql/db_conn.php';
 
 function pulisciQuery($query) {
