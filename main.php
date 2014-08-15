@@ -19,19 +19,7 @@
 
     </head>
     <body>
-        <!-- JAVASCRIPT -->
         <script>
-            //CLICK LISTENER
-            $(document).ready(function() {
-                $("#bottone_anno").click(function() {
-                    vistaAnno();
-                });
-            });
-            $(document).ready(function() {
-                $("#bottone_keyword").click(function() {
-                    vistaKeyword();
-                });
-            });
             //FUNZIONI
             function vistaAnno() {
                 $("#contenitore_dinamico").load("search/main_year.php");
@@ -42,10 +30,6 @@
             }
 
         </script>
-        <!-- -->
-
-
-
         <div id="header-wrapper">
             <div class="container">
                 <div class="row">
@@ -62,24 +46,27 @@
                 </div>
             </div>
         </div>
-        <div id="header-wrapper" text-align="center">
-            <div class="container">
-                <div class="row">
-                    <div class="12u">
-                        <ul>
-                            <li><button id="bottone_anno">list by year</li>
-                            <li><button id="bottone_keyword">search by keyword</li>
-                        </ul>
-                    </div>
-                </div>
+        <div id="div_menu_ricerca" text-align="center">
+            <div margin="0 auto">
+                <table>
+                    <tr>
+                        <td>
+                            <button id="bottone_anno" onclick="vistaAnno()">list by year</button>
+                        </td>
+                        <td>
+                            <button id="bottone_keyword" onclick="vistaKeyword()">search by keyword</button>
+                        </td>
+                    </tr>
+                </table>
             </div>
+            
         </div>
 
         <div id="contenitore_dinamico">
         </div>
 
         <footer>
-
+                foot
         </footer>
 
     </body>
