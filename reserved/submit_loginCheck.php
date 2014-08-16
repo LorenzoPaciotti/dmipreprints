@@ -10,7 +10,7 @@ if (isset($_POST['uid']) && isset($_POST['pw'])) {
     print_r($output_ldap[0]['sn']) ;
     if ($output_ldap['count'] == 1) {
         print "autorizzazione OK";
-        //TEST
+        //TEST, questo va fatto solo se AUTENTICATO
         session_start();
         $_SESSION['logged_user'] = true;
         $_SESSION['uid'] = $filteredUID;
@@ -21,10 +21,10 @@ if (isset($_POST['uid']) && isset($_POST['pw'])) {
             // pannello utente o amm
             // e parte la sessione
         } else {
-            echo "\nNO autenticazione\n";
+            print_r ("\nNO autenticazione\n");
         }
     } else {
-        echo "\nNO autorizzazione\n";
+        echo print_r("\nNO autorizzazione\n");
     }
 } else {
     echo 'DEBUG: parametri POST non impostati';
