@@ -6,14 +6,16 @@ if (isset($_POST['uid']) && isset($_POST['pw'])) {
 
     require_once getcwd() . '/../authorization/auth.php';
     $filteredUID = "rz690001"; //TEST TEST TEST
-    
-    if (LDAPAuth($filteredUID)) {
+    $output_ldap = LDAPAuth($filteredUID);
+    print_r($output_ldap[0]['sn']) ;
+    if ($output_ldap['count'] == 1) {
         print "autorizzazione OK";
         //TEST
         session_start();
         $_SESSION['logged_user'] = true;
         $_SESSION['uid'] = $filteredUID;
-        //TEST
+        $_SESSION['nome'] = $output_ldap[0]['sn'][0];
+         //TEST
         if (RADIUSAuth($filteredUID, $filteredPW)) {
             print "autenticazione OK";
             // pannello utente o amm

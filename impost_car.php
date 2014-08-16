@@ -2,7 +2,7 @@
 
 //file_get_contents();
 //fopen();
-$ini_array = parse_ini_file("/home/lorenzo/uploads/set.ini");
+$ini_array = parse_ini_file("/home/user/uploads/set.ini");
 print_r($ini_array);
 
 //mysql

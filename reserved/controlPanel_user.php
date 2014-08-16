@@ -1,3 +1,4 @@
+<?php print_r($_SESSION['nome']); ?>
 <button onclick="logout()">logout</button>
 <div id="contenitore">
     <form enctype="multipart/form-data" action="reserved/submit_uploadPHP.php" method="POST">
