@@ -1,10 +1,6 @@
 <?php
 require_once getcwd().'/../mysql/db_conn.php';
-
-function pulisciQuery($query) {
-    
-}
-
+require_once getcwd().'/../authorization/sec_sess.php';
 ##INSERIMENTO PAPER
 function inserisciPaper($titolo, $autore, $abstract, $nome_file, $data, $anno) {
     global $db_connect;
@@ -20,7 +16,7 @@ function inserisciPaper($titolo, $autore, $abstract, $nome_file, $data, $anno) {
     mysqli_free_result($result);
     if($row[0] == 0){
         echo '#INSERIMENTO AUTORE NON PRESENTE#';
-        session_start();
+        sec_session_start();
         $nome = $_SESSION['nome'];
         print "\$nome = " . $nome . "\n";
 

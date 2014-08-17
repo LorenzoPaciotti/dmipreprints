@@ -1,4 +1,5 @@
 <?php
+require_once getcwd().'/../authorization/sec_sess.php';
 
 if (isset($_POST['uid']) && isset($_POST['pw'])) {
     $filteredUID = filter_input(INPUT_POST, 'uid', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -11,7 +12,7 @@ if (isset($_POST['uid']) && isset($_POST['pw'])) {
     if ($output_ldap['count'] == 1) {
         print "autorizzazione OK";
         //TEST, questo va fatto solo se AUTENTICATO
-        session_start();
+        sec_session_start();
         $_SESSION['logged_user'] = true;
         $_SESSION['uid'] = $filteredUID;
         $_SESSION['nome'] = $output_ldap[0]['sn'][0];

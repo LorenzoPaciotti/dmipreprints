@@ -1,7 +1,8 @@
 <?php
 
 require_once getcwd() . '/../mysql/db_insert.php';
-session_start();
+require_once getcwd() . '/../authorization/sec_sess.php';
+sec_session_start();
 
 $allowed = array('pdf');
 $filename = $_FILES['userfile']['name'];
@@ -9,7 +10,7 @@ $ext = pathinfo($filename, PATHINFO_EXTENSION);
 if (!in_array($ext, $allowed)) {
     echo 'estensione file non corretta, permessi solo file pdf';
 } else {
-    
+
     $fileName = date("Y-m-d_H-i-s") . '.pdf';
     $fileTmpLoc = $_FILES["userfile"]["tmp_name"];
     $pathAndName = getcwd() . "/uploads/" . $fileName;
@@ -18,7 +19,7 @@ if (!in_array($ext, $allowed)) {
 
 ##DEBUG
     if ($moveResult == true) {
-        echo "\nDEBUG: file spostato correttamente da " . $fileTmpLoc . " a " . $pathAndName;
+        print_r("\nDEBUG: file spostato correttamente da " . $fileTmpLoc . " a " . $pathAndName);
         //INSERIMENTO IN DATABASE
         $titolo = $_POST["titolo"];
         $autore = $_SESSION["uid"];
