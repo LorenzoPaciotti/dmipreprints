@@ -49,16 +49,9 @@ function interrogaPerKeyword($keyword, $moderatore) {
     return $result;
 }
 
-function interrogaPerUID($uid, $moderatore) {
+function interrogaPerUID($uid) {
     global $db_connect;
-    $query = 'select * from PRINTS where uid=' . $uid;
-    
-    $moderatore = 1;//TEST
-    //presentiamo al pubblico solo i paper approvati dal moderatore
-    if (!$moderatore){
-        $query = $query.' AND approvato=1';
-    }
-    
+    $query = "select * from PRINTS where autore= '" . $uid ."'";
     $query = pulisciQuery($query);
     echo $query;
     $result = mysqli_query($db_connect, $query) or die(mysqli_error($db_connect));

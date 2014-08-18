@@ -14,7 +14,7 @@ function CreaDB() {
 
     ##CREAZIONE TABELLE
     #AUTORI contiene tutti i possibili utenti del servizio (professori o altri ruoli)
-    $query = 'CREATE TABLE if not exists AUTORI (uid VARCHAR(9) PRIMARY KEY, nome VARCHAR (50) NOT NULL, cognome VARCHAR(50) NOT NULL)';
+    $query = 'CREATE TABLE if not exists AUTORI (uid VARCHAR(9) PRIMARY KEY, nome VARCHAR (50) NOT NULL)';
     $result = mysqli_query($db_connect, $query) or die('Query failed: ' . mysqli_error());
 
     #PRINTS contiene le informazioni sui preprint memorizzati, il campo TIMESTAMP contiene l'istante dell'ultima MODIFICA, il campo data_inserimento la data di inserimento originale (con formato '05-05-22 11:16:33')

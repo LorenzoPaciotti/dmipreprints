@@ -25,15 +25,16 @@ function inserisciPaper($titolo, $autore, $abstract, $nome_file, $data, $anno) {
 
         //insert nuovo autore
         $query = "insert into AUTORI (uid, nome) values ('".$uid."','".$nome."')";
-        $result = mysqli_query($db_connect, $query) or die('\n\nQuery failed: ' . mysqli_error() . $query);
+        $result = mysqli_query($db_connect, $query) or die('\n\nQuery failed: ' . mysqli_error($db_connect) . $query);
     }
-    
-
-
+    echo '::::::::::::inserimento prints::::::';
     $query = "INSERT INTO PRINTS(titolo,autore,abstract,nome_file,data_inserimento,anno) values ('" . $titolo . "','" . $autore . "','" . $abstract . "','" . $nome_file . "','" . $data . "'," . $anno . ")";
-
-    pulisciQuery($query);
-    $result = mysqli_query($db_connect, $query) or die('\n\nQuery failed: ' . mysqli_error() . $query);
+    $result = mysqli_query($db_connect, $query) or die('\n\nQuery failed: ' . mysqli_error($db_connect) . $query);
+    print mysqli_errno($db_connect) . "\n";
+    print mysqli_error($db_connect);
+    
+    
+    echo ':::FINE DB_INSERT:::';
     return $result;
 }
 

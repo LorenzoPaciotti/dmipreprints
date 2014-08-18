@@ -1,4 +1,12 @@
-<?php print_r($_SESSION['nome']."\n"); print_r($_SESSION['uid']); ?>
+<?php
+include_once getcwd() . '/../search/main_tabella.php';
+include_once getcwd() . '/../mysql/db_select.php';
+print_r(" Logged in as: ");
+$uid = $_SESSION['uid'];
+print_r($_SESSION['nome']);
+print_r(" UID: " . $_SESSION['uid']);
+?>
+
 <button onclick="logout()">logout</button>
 <div id="contenitore">
     <form enctype="multipart/form-data" action="reserved/submit_uploadPHP.php" method="POST">
@@ -28,4 +36,12 @@
             </li>
         </ul>
     </form>
+    <div>
+        <h2>Your Preprints</h2>
+        <?php
+        print_r($uid);
+        stampaTabellaCompleta(interrogaPerUID($uid));
+        print_r(php_last_error());
+        ?>
+    </div>
 </div>

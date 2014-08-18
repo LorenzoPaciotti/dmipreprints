@@ -19,16 +19,10 @@
     <body>
         <script>
             //FUNZIONI
-            function ris() {
+            function show_keyword() {
                 var quer = $('#input_keyword').val();
                 $("#right_content").load("search/main_keyword_content.php", {query : quer});
             }
-            //CLICK LISTENER
-            $(document).ready(function() {
-                $("#button_cerca_keyword").click(function() {
-                    ris();
-                });
-            });
         </script>
         <div id="keyword_container">
             <div id="left">
@@ -36,7 +30,7 @@
                     <ul>
                         <li>
                             <input placeholder="keyword" id="input_keyword">
-                            <button id="button_cerca_keyword">Search</button>
+                            <button id="button_cerca_keyword" onclick="show_keyword()">Search</button>
                         </li>
                     </ul>
                 </div>
