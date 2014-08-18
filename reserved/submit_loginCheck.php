@@ -1,4 +1,5 @@
 <?php
+require_once getcwd().'/../authorization/sec_sess.php';
 
 if (isset($_POST['uid']) && isset($_POST['pw'])) {
     $filteredUID = filter_input(INPUT_POST, 'uid', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -6,23 +7,25 @@ if (isset($_POST['uid']) && isset($_POST['pw'])) {
 
     require_once getcwd() . '/../authorization/auth.php';
     $filteredUID = "rz690001"; //TEST TEST TEST
-    
-    if (LDAPAuth($filteredUID)) {
+    $output_ldap = LDAPAuth($filteredUID);
+    print_r($output_ldap[0]['sn']) ;
+    if ($output_ldap['count'] == 1) {
         print "autorizzazione OK";
-        //TEST
-        session_start();
+        //TEST, questo va fatto solo se AUTENTICATO
+        sec_session_start();
         $_SESSION['logged_user'] = true;
         $_SESSION['uid'] = $filteredUID;
-        //TEST
+        $_SESSION['nome'] = $output_ldap[0]['sn'][0];
+         //TEST
         if (RADIUSAuth($filteredUID, $filteredPW)) {
             print "autenticazione OK";
             // pannello utente o amm
             // e parte la sessione
         } else {
-            echo "\nNO autenticazione\n";
+            print_r ("\nNO autenticazione\n");
         }
     } else {
-        echo "\nNO autorizzazione\n";
+        echo print_r("\nNO autorizzazione\n");
     }
 } else {
     echo 'DEBUG: parametri POST non impostati';
