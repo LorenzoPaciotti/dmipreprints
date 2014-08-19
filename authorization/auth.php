@@ -1,5 +1,5 @@
 <?php
-require_once getcwd().'/../impost_car.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/'.'impost_car.php';
 function LDAPAuth($UID) {
 // connessione a LDAP
     global $ldaphost, $ldapport;
@@ -30,7 +30,7 @@ function RADIUSAuth($UID, $PASSWORD) {
 
     $username = $UID;
     $password = $PASSWORD;
-    require_once('radius.class.php');
+    require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/'.'authorization/radius.class.php';
     $radius = new Radius($ip_radius_server, $shared_secret);
     $result = $radius->AccessRequest($username, $password);
     if ($result) {

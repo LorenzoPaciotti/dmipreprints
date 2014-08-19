@@ -1,14 +1,13 @@
 <?php
-//require_once getcwd().'/../mysql/db_select.php';
 function stampaRigaLinkPDF($nome_file) {
     print_r('<a href="download/download.php?file=' . $nome_file . '">PDF</a>');
 }
 
 function stampaApprovato($val) {
-    if ($val == 1) {
-        print YES;
+    if ($val === 1) {
+        echo 'YES';
     } else {
-        print NO;
+        echo 'NO';
     }
 }
 
@@ -44,6 +43,9 @@ function stampaTabellaCompleta($data) {
         echo '</td>';
         echo '<td>';
         stampaRigaLinkPDF($row['nome_file']);
+        echo '</td>';
+        echo '<td>';
+        stampaApprovato($row['approvato']);
         echo '</td>';
         echo '</tr>';
     }

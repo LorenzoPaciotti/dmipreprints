@@ -1,7 +1,7 @@
 <?php
 
-require_once getcwd() . '/../mysql/db_insert.php';
-require_once getcwd() . '/../authorization/sec_sess.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'mysql/db_insert.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'authorization/sec_sess.php';
 sec_session_start();
 
 $allowed = array('pdf');

@@ -1,5 +1,5 @@
 <?php
-require_once getcwd().'/../authorization/sec_sess.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'authorization/sec_sess.php';
 
 if (isset($_POST['uid']) && isset($_POST['pw'])) {
     $filteredUID = filter_input(INPUT_POST, 'uid', FILTER_SANITIZE_SPECIAL_CHARS);

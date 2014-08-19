@@ -5,5 +5,5 @@
 //connettiDBManager();
 //disconnettiDBManager();*/
 
-require_once getcwd().'/../mysql/db_init.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/'.'mysql/db_init.php';
 CreaDB();

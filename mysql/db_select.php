@@ -1,6 +1,6 @@
 <?php
-require_once getcwd().'/../mysql/db_conn.php';
-require_once getcwd().'/../mysql/db_sec.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/'.'mysql/db_conn.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/'.'mysql/db_sec.php';
 connettiDBManager();
 selezionaSchema();
 

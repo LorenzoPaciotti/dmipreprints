@@ -1,6 +1,6 @@
 <?php
-require_once getcwd().'/../mysql/db_conn.php';
-require_once getcwd().'/../authorization/sec_sess.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/'.'mysql/db_conn.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/'.'authorization/sec_sess.php';
 ##INSERIMENTO PAPER
 function inserisciPaper($titolo, $autore, $abstract, $nome_file, $data, $anno) {
     global $db_connect;

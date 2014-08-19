@@ -60,14 +60,14 @@
                     </tr>
                 </table>
             </div>
-            
+
         </div>
 
-        <div id="contenitore_dinamico">
+        <div id="contenitore_dinamico" class="contenitore">
         </div>
 
         <footer>
-                foot
+            foot
         </footer>
 
     </body>

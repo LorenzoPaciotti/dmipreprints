@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="css/style-desktop.css" />
         </noscript>
         <link rel="stylesheet" type="text/css" href="css/tabelle.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
         <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
     </head>
@@ -44,9 +45,11 @@
                 </div>
             </div>
         </div>
-        <div id="container_principale">
+        <div id="container_principale" class="contenitore">
             <?php
-            require_once getcwd() . '/reserved/submit_loginChooser.php';
+            error_reporting(E_ALL);
+            ini_set('display_errors', 1);
+            require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/' . 'reserved/submit_loginChooser.php';
             ?>
         </div>
     </body>

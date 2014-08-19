@@ -1,7 +1,6 @@
 <?php
-print_r("CWD: " . getcwd());
-require_once getcwd() . '/search/main_tabella.php';
-//require_once getcwd().'/../mysql/db_select.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'mysql/db_select.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'search/main_tabella.php';
 print_r(" Logged in as: ");
 print_r($_SESSION['nome']);
 print_r(" UID: " . $_SESSION['uid']);
@@ -38,6 +37,6 @@ print_r(" UID: " . $_SESSION['uid']);
     </form>
     <div>
         <h2>Your Preprints</h2>
-        <?php stampaTabellaCompleta();?>
+        <?php stampaTabellaCompleta(interrogaPerUID($_SESSION['uid'])); ?>
     </div>
 </div>

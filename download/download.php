@@ -1,7 +1,7 @@
 <?php
 if (isset($_GET) && isset($_GET['file'])) {
     #$filename = filter_input($_GET['file']); //path assoluto al file sul server
-    $path = getcwd().'/../reserved/uploads/'.$_GET['file'];
+    $path = $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/'.'reserved/uploads/'.$_GET['file'];
     header('Pragma: public');
     header('Expires: 0');
     header('Cache-Control: must-revalidate, post-check=0, pre-check=0');

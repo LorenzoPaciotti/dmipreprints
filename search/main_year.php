@@ -1,7 +1,7 @@
 <?php
 
 #richiesta anni nel db
-require_once getcwd().'/../mysql/db_select.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'mysql/db_select.php';
 $lista_anni = listaAnni();
 
 

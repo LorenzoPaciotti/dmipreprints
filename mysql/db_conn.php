@@ -1,6 +1,5 @@
 <?php
-
-require_once getcwd() . '/../impost_car.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/' . 'impost_car.php';
 $db_connect;
 
 function connettiDBManager() {
