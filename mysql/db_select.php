@@ -1,5 +1,4 @@
 <?php
-
 require_once getcwd().'/../mysql/db_conn.php';
 require_once getcwd().'/../mysql/db_sec.php';
 connettiDBManager();

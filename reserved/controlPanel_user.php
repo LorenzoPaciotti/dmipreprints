@@ -1,8 +1,8 @@
 <?php
-include_once getcwd() . '/../search/main_tabella.php';
-include_once getcwd() . '/../mysql/db_select.php';
+print_r("CWD: " . getcwd());
+require_once getcwd() . '/search/main_tabella.php';
+//require_once getcwd() . '/mysql/db_select.php';
 print_r(" Logged in as: ");
-$uid = $_SESSION['uid'];
 print_r($_SESSION['nome']);
 print_r(" UID: " . $_SESSION['uid']);
 ?>
@@ -38,10 +38,6 @@ print_r(" UID: " . $_SESSION['uid']);
     </form>
     <div>
         <h2>Your Preprints</h2>
-        <?php
-        print_r($uid);
-        stampaTabellaCompleta(interrogaPerUID($uid));
-        print_r(php_last_error());
-        ?>
+        <?php stampaTabellaCompleta();?>
     </div>
 </div>
