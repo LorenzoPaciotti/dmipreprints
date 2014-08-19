@@ -47,6 +47,7 @@
         </div>
         <div id="container_principale" class="contenitore">
             <?php
+            //TEST DEBUG
             error_reporting(E_ALL);
             ini_set('display_errors', 1);
             require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/' . 'reserved/submit_loginChooser.php';

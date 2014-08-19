@@ -58,4 +58,14 @@ function interrogaPerUID($uid) {
     return $result;
 }
 
+function interrogaPerIdPaper($id){
+    global $db_connect;
+    $query = "select * from PRINTS where id_PRINTS= '" . $id ."'";
+    $query = pulisciQuery($query);
+    echo $query;
+    $result = mysqli_query($db_connect, $query) or die(mysqli_error($db_connect));
+    mysqli_close($db_connect);
+    return $result;
+}
+
 ?>

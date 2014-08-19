@@ -6,7 +6,18 @@ print_r($_SESSION['nome']);
 print_r(" UID: " . $_SESSION['uid']);
 ?>
 
-<button onclick="logout()">logout</button>
+<button onclick="logout()" id="button_logout">logout</button>
+<script>
+    $(document).ready(function() {
+        $("button").click(function(event) {
+            if(event.target.id !== "button_logout"){
+                alert(event.target.id);
+                $("#cont_feedback").load("reserved/submit_removeFilePHP.php", {id : event.target.id});
+                location.reload();
+            }
+        });
+    });
+</script>
 <div id="contenitore">
     <form enctype="multipart/form-data" action="reserved/submit_uploadPHP.php" method="POST">
         <ul>
@@ -39,4 +50,7 @@ print_r(" UID: " . $_SESSION['uid']);
         <h2>Your Preprints</h2>
         <?php stampaTabellaCompleta(interrogaPerUID($_SESSION['uid'])); ?>
     </div>
+</div>
+<div id="cont_feedback">
+    
 </div>

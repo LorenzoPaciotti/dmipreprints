@@ -11,6 +11,10 @@ function stampaApprovato($val) {
     }
 }
 
+function stampaButtonElimina($id){
+    echo '<button id="'.$id.'">Eliminazione'."</button>";
+}
+
 function stampaTabellaCompleta($data) {
     echo '<table class="tabelle">';
     echo '<tr>';
@@ -29,6 +33,9 @@ function stampaTabellaCompleta($data) {
     echo '<td>';
     echo 'ACCEPTED';
     echo '</td>';
+    echo '<td>';
+    echo 'elimina';
+    echo '</td>';
     echo '</tr>';
     while ($row = mysqli_fetch_array($data)) {
         echo '<tr>';
@@ -46,6 +53,9 @@ function stampaTabellaCompleta($data) {
         echo '</td>';
         echo '<td>';
         stampaApprovato($row['approvato']);
+        echo '</td>';
+        echo '<td>';
+        stampaButtonElimina($row['id_PRINTS']);
         echo '</td>';
         echo '</tr>';
     }

@@ -11,7 +11,7 @@ if (!in_array($ext, $allowed)) {
     echo 'estensione file non corretta, permessi solo file pdf';
 } else {
 
-    $fileName = date("Y-m-d_H-i-s") . '.pdf';
+    $fileName = date("Y-m-d_H-i-s_") . $_POST["titolo"] . '.pdf';
     $fileTmpLoc = $_FILES["userfile"]["tmp_name"];
     $pathAndName = getcwd() . "/uploads/" . $fileName;
     $moveResult = move_uploaded_file($fileTmpLoc, $pathAndName);
