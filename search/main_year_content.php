@@ -1,5 +1,4 @@
 <?php
-
 require_once getcwd().'/../mysql/db_select.php';
 require_once 'main_tabella.php';
 

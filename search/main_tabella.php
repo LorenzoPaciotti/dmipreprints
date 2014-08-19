@@ -1,5 +1,5 @@
 <?php
-
+//require_once getcwd().'/../mysql/db_select.php';
 function stampaRigaLinkPDF($nome_file) {
     print_r('<a href="download/download.php?file=' . $nome_file . '">PDF</a>');
 }

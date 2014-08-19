@@ -1,7 +1,7 @@
 <?php
 print_r("CWD: " . getcwd());
 require_once getcwd() . '/search/main_tabella.php';
-//require_once getcwd() . '/mysql/db_select.php';
+//require_once getcwd().'/../mysql/db_select.php';
 print_r(" Logged in as: ");
 print_r($_SESSION['nome']);
 print_r(" UID: " . $_SESSION['uid']);
