@@ -8,7 +8,6 @@ function listaAnni() {
     global $db_connect;
     $query = 'select distinct(anno) from PRINTS';
     $query = pulisciQuery($query);
-    echo $query;
     $result = mysqli_query($db_connect, $query) or die(mysqli_error($db_connect));
     mysqli_close($db_connect);
     return $result;
@@ -24,7 +23,6 @@ function interrogaPerAnno($anno, $moderatore) {
     }
     
     $query = pulisciQuery($query);
-    echo $query;
     $result = mysqli_query($db_connect, $query) or die(mysqli_error($db_connect));
     mysqli_close($db_connect);
     return $result;
@@ -42,7 +40,6 @@ function interrogaPerKeyword($keyword, $moderatore) {
     }
     
     $query = pulisciQuery($query, $moderatore);
-    echo $query;
     $result = mysqli_query($db_connect, $query) or die(mysqli_error($db_connect));
     mysqli_close($db_connect);
     return $result;
