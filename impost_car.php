@@ -15,4 +15,7 @@ $ldapport = $ini_array['ldap_port'];
 $ip_radius_server = $ini_array['radius_ip'];
 $shared_secret = $ini_array['radius_secret'];
 
+//mod uid
+$mod_uid = $ini_array['uidMod'];
+
 ?>

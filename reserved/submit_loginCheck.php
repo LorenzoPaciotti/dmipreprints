@@ -1,28 +1,37 @@
 <?php
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'authorization/sec_sess.php';
-
+require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'impost_car.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'authorization/auth.php';
 if (isset($_POST['uid']) && isset($_POST['pw'])) {
-    $filteredUID = filter_input(INPUT_POST, 'uid', FILTER_SANITIZE_SPECIAL_CHARS);
-    $filteredPW = filter_input(INPUT_POST, 'pw', FILTER_SANITIZE_SPECIAL_CHARS); //la password di ateneo può contenere car speciali
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    global $mod_uid;
 
-    require_once getcwd() . '/../authorization/auth.php';
-    $filteredUID = "rz690001"; //TEST TEST TEST
-    $output_ldap = LDAPAuth($filteredUID);
-    print_r($output_ldap[0]['sn']) ;
+    $inputUID = $_POST['uid'];
+    $inputPass = $_POST['pw']; //la password di ateneo può contenere car speciali
+
+    $output_ldap = LDAPAuth($inputUID); //chiamata LDAP
+
     if ($output_ldap['count'] == 1) {
         print "autorizzazione OK";
         //TEST, questo va fatto solo se AUTENTICATO
         sec_session_start();
-        $_SESSION['logged_user'] = true;
-        $_SESSION['uid'] = $filteredUID;
+        if ($_POST['uid'] === $mod_uid) {
+            $_SESSION['logged_type'] = "mod";
+        } else {
+            $_SESSION['logged_type'] = "user";
+        }
+
+        $_SESSION['uid'] = $inputUID;
         $_SESSION['nome'] = $output_ldap[0]['sn'][0];
-         //TEST
-        if (RADIUSAuth($filteredUID, $filteredPW)) {
+        //TEST
+        if (RADIUSAuth($inputUID, $inputPass)) {
             print "autenticazione OK";
             // pannello utente o amm
             // e parte la sessione
         } else {
-            print_r ("\nNO autenticazione\n");
+            print_r("\nNO autenticazione\n");
         }
     } else {
         echo print_r("\nNO autorizzazione\n");

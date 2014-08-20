@@ -67,7 +67,7 @@
         </div>
 
         <footer>
-            foot
+            
         </footer>
 
     </body>

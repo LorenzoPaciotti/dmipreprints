@@ -1,5 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/'.'impost_car.php';
+
+
 function LDAPAuth($UID) {
 // connessione a LDAP
     global $ldaphost, $ldapport;
@@ -9,28 +11,23 @@ function LDAPAuth($UID) {
     $dn = "ou=users,dc=dmi,dc=unipg,dc=it";
     //l'utente deve avere la licenza all'uso di DMIPrePrints
     $filter = "(&(carLicense=:dmipreprints:)(uid=$UID))";
-    //selezione dei campi di interesse
-    $justthese = array("sn", "mail");
+    //selezione dei campi di interesse per il ritorno
+    $justthese = array("sn");
 
     //ricerca nell'albero LDAP
     $sr = ldap_search($ds, $dn, $filter, $justthese);
-
-    //restituzione risultato, solo se il conteggio dei match è 1 torna TRUE
     $info = ldap_get_entries($ds, $sr);
+    
     return $info;
-    /*
-    if ($info["count"] == 1) {
-        return $info;
-    }
-     * */
 }
 
 //RADIUS
-function RADIUSAuth($UID, $PASSWORD) {
+function RADIUSAuth($UID, $PASSWORD) {/*
+    require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/'.'authorization/radius.class.php';
 
     $username = $UID;
     $password = $PASSWORD;
-    require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/'.'authorization/radius.class.php';
+    
     $radius = new Radius($ip_radius_server, $shared_secret);
     $result = $radius->AccessRequest($username, $password);
     if ($result) {
@@ -39,7 +36,7 @@ function RADIUSAuth($UID, $PASSWORD) {
     } else {
         echo 'RADIUS ERRORE';
         return false;
-    }
+    }*/
 }
 
 ?>

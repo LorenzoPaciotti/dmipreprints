@@ -65,4 +65,14 @@ function interrogaPerIdPaper($id){
     return $result;
 }
 
+function interrogaWhole(){
+    global $db_connect;
+    $query = "select * from PRINTS";
+    $query = pulisciQuery($query);
+    echo $query;
+    $result = mysqli_query($db_connect, $query) or die(mysqli_error($db_connect));
+    mysqli_close($db_connect);
+    return $result;
+}
+
 ?>

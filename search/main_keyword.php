@@ -38,7 +38,6 @@
             </div>
             <div id="right">
                 <div id="right_content">
-                    right content
                 </div>
             </div>
         </div>
