@@ -15,10 +15,22 @@
     </head>
     <body>
 
-        <div id="left_content">
-            <input id="input_uid" placeholder="uid">
-            <input id="input_pw" placeholder="password">
-            <button id="button_login" onclick="ris()">Login</button>
+        <div id="left_content" class="contenitore">
+            <table width="10%" style="margin: 0 auto">
+                <tr>
+                    <td>
+                        <input id="input_uid" class="textbox" placeholder="uid">
+                    </td>
+                    <td>
+                        <input id="input_pw" class="textbox" placeholder="password">
+                    </td>
+                </tr>
+            </table>
+            <div style="margin: 0 auto">
+                <button id="button_login" class="bottoni" onclick="ris()">Login</button>
+            </div>
+            
+            
         </div>
         <div id="right_content">
             right content

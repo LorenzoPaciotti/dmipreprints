@@ -15,6 +15,7 @@
         </noscript>
         <link rel="stylesheet" href="css/main.css" />
         <link rel="stylesheet" type="text/css" href="css/tabelle.css">
+        <link rel="stylesheet" type="text/css" href="css/controlli.css">
         <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 
@@ -47,15 +48,15 @@
                 </div>
             </div>
         </div>
-        <div id="div_menu_ricerca" text-align="center">
-            <div margin="0 auto">
+        <div id="div_menu_ricerca" class="contenitore">
+            <div>
                 <table>
                     <tr>
                         <td>
-                            <button id="bottone_anno" onclick="vistaAnno()">list by year</button>
+                            <button id="bottone_anno" class="bottoni" onclick="vistaAnno()">list by year</button>
                         </td>
                         <td>
-                            <button id="bottone_keyword" onclick="vistaKeyword()">search by keyword</button>
+                            <button id="bottone_keyword" class="bottoni" onclick="vistaKeyword()">search by keyword</button>
                         </td>
                     </tr>
                 </table>

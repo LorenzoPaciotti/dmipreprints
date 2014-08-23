@@ -40,7 +40,10 @@ function stampaTabellaCompleta($data, $mod) {
         echo 'Approvato';
         echo '</td>';
         echo '<td>';
-        echo 'Operazioni';
+        echo 'Elimina';
+        echo '</td>';
+        echo '<td>';
+        echo 'Approva';
         echo '</td>';
         echo '</tr>';
         while ($row = mysqli_fetch_array($data)) {

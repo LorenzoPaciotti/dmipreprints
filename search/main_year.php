@@ -12,28 +12,24 @@ $lista_anni = listaAnni();
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
         <style>
             #left{
-                max-width: 20%;
-                text-align: center;
+                width: 4%;
+                margin: 0 auto;
+                float: left;
             }
             #right{
-                max-width: 40%;
-                text-align: center;
-            }
-            #keyword_container{
-                display: table-row;
-                text-align: center;
+                width: 80%;
+                margin: 0 auto;
+                float: right;
             }
         </style>
     </head>
     <body>
         <script>
-            //FUNZIONI
             function ris(quer) {
                 $("#right_content").load("search/main_year_content.php", {query : quer});
             }
         </script>
-        <div id="keyword_container">
-            <div id="left">
+        <div id="left">
                 <div id="left_content">
                     <ul>
                     <?php
@@ -44,19 +40,14 @@ $lista_anni = listaAnni();
                         print $row['anno'];
                         echo '</a>';
                         echo '</li>';
-                    }
-                    
+                    }                   
                     ?>
                     </ul>
                 </div>
-
             </div>
             <div id="right">
                 <div id="right_content">
                 </div>
             </div>
-        </div>
-
-
     </body>
 </html>

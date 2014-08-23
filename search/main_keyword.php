@@ -4,15 +4,14 @@
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
         <style>
             #left{
-                max-width: 20%;
-                text-align: left;
+                width: 4%;
+                margin: 0 auto;
+                float: left;
             }
             #right{
-                max-width: 40%;
-                text-align: right;
-            }
-            #keyword_container{
-                display: table-row;
+                width: 80%;
+                margin: 0 auto;
+                float: right;
             }
         </style>
     </head>
@@ -21,24 +20,22 @@
             //FUNZIONI
             function show_keyword() {
                 var quer = $('#input_keyword').val();
-                $("#right_content").load("search/main_keyword_content.php", {query : quer});
+                $("#right_content").load("search/main_keyword_content.php", {query: quer});
             }
         </script>
-        <div id="keyword_container">
-            <div id="left">
-                <div id="left_content">
-                    <ul>
-                        <li>
-                            <input placeholder="keyword" id="input_keyword">
-                            <button id="button_cerca_keyword" onclick="show_keyword()">Search</button>
-                        </li>
-                    </ul>
-                </div>
-
+        <div id="left">
+            <div id="left_content">
+                <ul>
+                    <li>
+                        <input placeholder="keyword" id="input_keyword">
+                        <button id="button_cerca_keyword" class="bottoni" onclick="show_keyword()">Search</button>
+                    </li>
+                </ul>
             </div>
-            <div id="right">
-                <div id="right_content">
-                </div>
+
+        </div>
+        <div id="right">
+            <div id="right_content">
             </div>
         </div>
 
