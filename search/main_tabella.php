@@ -5,7 +5,7 @@ function stampaRigaLinkPDF($nome_file) {
 }
 
 function stampaApprovato($val) {
-    if ($val === 1) {
+    if ($val === "1") {
         echo 'SI';
     } else {
         echo 'NO';
@@ -13,11 +13,11 @@ function stampaApprovato($val) {
 }
 
 function stampaButtonElimina($id) {
-    echo '<button id=elim#"' . $id . '">Elimina' . "</button>";
+    echo '<button class="bottoni" id=elim#"' . $id . '">Elimina' . "</button>";
 }
 
 function stampaButtonApprova($id) {
-    echo '<button id=appr#"' . $id . '">Approva' . "</button>";
+    echo '<button class="bottoni" id=appr#"' . $id . '">Approva' . "</button>";
 }
 
 function stampaTabellaCompleta($data, $mod) {

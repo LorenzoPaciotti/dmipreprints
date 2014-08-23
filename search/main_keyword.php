@@ -27,7 +27,7 @@
             <div id="left_content">
                 <ul>
                     <li>
-                        <input placeholder="keyword" id="input_keyword">
+                        <input placeholder="keyword" class="textbox" id="input_keyword">
                         <button id="button_cerca_keyword" class="bottoni" onclick="show_keyword()">Search</button>
                     </li>
                 </ul>

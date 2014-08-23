@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" href="css/tabelle.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/controlli.css">
+        <link rel="stylesheet" type="text/css" href="css/uploadForm.css">
         <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
     </head>
@@ -26,6 +27,14 @@
                     $("#container_principale").load("reserved/submit_loginChooser.php", function() {
                         location.reload(true);
                     });
+                });
+            }
+            function chkLogin() {
+                var uidV = $('#input_uid').val();
+                var pwV = $('#input_pw').val();
+                $("#left_content").load("reserved/submit_loginCheck.php", {uid: uidV, pw: pwV}, function() {
+                    $("#right_content").load("reserved/submit_loginChooser.php");
+                    location.reload(true);
                 });
             }
         </script>
@@ -51,7 +60,7 @@
             //TEST DEBUG
             error_reporting(E_ALL);
             ini_set('display_errors', 1);
-            require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/' . 'reserved/submit_loginChooser.php';
+            require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'reserved/submit_loginChooser.php';
             ?>
         </div>
     </body>

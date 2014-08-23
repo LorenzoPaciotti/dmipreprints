@@ -1,10 +1,11 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/'.'mysql/db_conn.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/'.'mysql/db_sec.php';
-connettiDBManager();
-selezionaSchema();
+
 
 function listaAnni() {
+    connettiDBManager();
+    selezionaSchema();
     global $db_connect;
     $query = 'select distinct(anno) from PRINTS';
     $query = pulisciQuery($query);
@@ -14,6 +15,8 @@ function listaAnni() {
 }
 
 function interrogaPerAnno($anno, $moderatore) {
+    connettiDBManager();
+    selezionaSchema();
     global $db_connect;
     $query = 'select * from PRINTS where anno=' . $anno;
     
@@ -29,6 +32,8 @@ function interrogaPerAnno($anno, $moderatore) {
 }
 
 function interrogaPerKeyword($keyword, $moderatore) {
+    connettiDBManager();
+    selezionaSchema();
     global $db_connect;
     $keyword = '"%' . $keyword . '%"';
     $query = 'select * from PRINTS where (titolo LIKE ' . $keyword . ' OR abstract LIKE ' . $keyword . ' OR autore LIKE ' . $keyword.') AND approvato = 1';
@@ -46,6 +51,8 @@ function interrogaPerKeyword($keyword, $moderatore) {
 }
 
 function interrogaPerUID($uid) {
+    connettiDBManager();
+    selezionaSchema();
     global $db_connect;
     $query = "select * from PRINTS where autore= '" . $uid ."'";
     $query = pulisciQuery($query);
@@ -56,6 +63,8 @@ function interrogaPerUID($uid) {
 }
 
 function interrogaPerIdPaper($id){
+    connettiDBManager();
+    selezionaSchema();
     global $db_connect;
     $query = "select * from PRINTS where id_PRINTS= '" . $id ."'";
     $query = pulisciQuery($query);
@@ -66,6 +75,8 @@ function interrogaPerIdPaper($id){
 }
 
 function interrogaWhole(){
+    connettiDBManager();
+    selezionaSchema();
     global $db_connect;
     $query = "select * from PRINTS";
     $query = pulisciQuery($query);
