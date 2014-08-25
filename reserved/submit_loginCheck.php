@@ -15,21 +15,17 @@ if (isset($_POST['uid']) && isset($_POST['pw'])) {
 
     if ($output_ldap['count'] == 1) {
         print "autorizzazione OK";
-        //TEST, questo va fatto solo se AUTENTICATO
-        sec_session_start();
-        if ($_POST['uid'] === $mod_uid) {
-            $_SESSION['logged_type'] = "mod";
-        } else {
-            $_SESSION['logged_type'] = "user";
-        }
-
-        $_SESSION['uid'] = $inputUID;
-        $_SESSION['nome'] = $output_ldap[0]['sn'][0];
-        //TEST
         if (RADIUSAuth($inputUID, $inputPass)) {
             print "autenticazione OK";
-            // pannello utente o amm
-            // e parte la sessione
+            //TEST, questo va fatto solo se AUTENTICATO
+            sec_session_start();
+            if ($_POST['uid'] === $mod_uid) {
+                $_SESSION['logged_type'] = "mod";
+            } else {
+                $_SESSION['logged_type'] = "user";
+            }
+            $_SESSION['uid'] = $inputUID;
+            $_SESSION['nome'] = $output_ldap[0]['sn'][0];
         } else {
             print_r("\nNO autenticazione\n");
         }

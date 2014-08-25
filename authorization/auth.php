@@ -22,21 +22,19 @@ function LDAPAuth($UID) {
 }
 
 //RADIUS
-function RADIUSAuth($UID, $PASSWORD) {/*
+function RADIUSAuth($UID, $PASSWORD) {
+    global $ip_radius_server, $shared_secret;
     require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/'.'authorization/radius.class.php';
-
-    $username = $UID;
-    $password = $PASSWORD;
     
     $radius = new Radius($ip_radius_server, $shared_secret);
-    $result = $radius->AccessRequest($username, $password);
+    $result = $radius->AccessRequest($UID, $PASSWORD);
     if ($result) {
         echo 'RADIUS OK';
         return true;
     } else {
         echo 'RADIUS ERRORE';
         return false;
-    }*/
+    }
 }
 
 ?>
