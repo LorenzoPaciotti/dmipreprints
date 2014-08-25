@@ -3,9 +3,8 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/'.'impost_car.php';
 
 
 function LDAPAuth($UID) {
-// connessione a LDAP
     global $ldaphost, $ldapport;
-    $ldapconn = ldap_connect($ldaphost, $ldapport) or die("Could not connect to $ldaphost");
+    $ldapconn = ldap_connect($ldaphost, $ldapport) or die("errore connessione LDAP server:  $ldaphost");
     ldap_set_option($ldapconn, LDAP_OPT_PROTOCOL_VERSION, 3);
     $ds = $ldapconn;
     $dn = "ou=users,dc=dmi,dc=unipg,dc=it";
@@ -21,7 +20,6 @@ function LDAPAuth($UID) {
     return $info;
 }
 
-//RADIUS
 function RADIUSAuth($UID, $PASSWORD) {
     global $ip_radius_server, $shared_secret;
     require_once $_SERVER['DOCUMENT_ROOT'].'/dmipreprints/'.'authorization/radius.class.php';
