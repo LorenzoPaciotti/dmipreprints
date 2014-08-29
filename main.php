@@ -30,6 +30,10 @@
             function vistaKeyword() {
                 $("#contenitore_dinamico").load("search/main_keyword.php");
             }
+            
+            function visAbstract(id_paper){
+                alert(id_paper);
+            }
 
         </script>
         <div id="header-wrapper">

@@ -20,6 +20,12 @@ function stampaButtonApprova($id) {
     echo '<button class="bottoni" id=appr#"' . $id . '">Approva' . "</button>";
 }
 
+function stampaLinkAbstract($id) {
+    $id = "'.$id.'";
+    $tmp = 'onClick="visAbstract(' . $id . ')"';
+    echo '<a href="#" ' . $tmp . ' >abstract</a>';
+}
+
 function stampaTabellaCompleta($data, $mod) {
     if ($mod === 1) {//mod
         echo '<table class="tabelle">';
@@ -127,6 +133,9 @@ function stampaTabella($data) {
     echo 'titolo';
     echo '</td>';
     echo '<td>';
+    echo 'abstract';
+    echo '</td>';
+    echo '<td>';
     echo 'autore';
     echo '</td>';
     echo '<td>';
@@ -140,6 +149,9 @@ function stampaTabella($data) {
         echo '<tr>';
         echo '<td>';
         print_r($row['titolo']);
+        echo '</td>';
+        echo '<td>';
+        stampaLinkAbstract($row['abstract']);
         echo '</td>';
         echo '<td>';
         print_r($row['nome']);

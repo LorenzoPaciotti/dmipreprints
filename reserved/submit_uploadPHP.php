@@ -26,7 +26,6 @@ if (!in_array($ext, $allowed)) {
         //INSERIMENTO IN DATABASE
         $titolo = $_POST["titolo"];
         $autore = $_SESSION["uid"];
-        //TEST
         $abstract = $_POST["abstract"];
         $data = date("Y-m-d H:i:s");
         $anno = date("Y");
