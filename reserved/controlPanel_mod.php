@@ -14,7 +14,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'search/main_tabella
     ?>
 </div>
 <div style="float: right">
-    <button onclick="logout()" id="button_logout" class="bottoni">logout</button>
+    <button onclick="logout()" id="button_logout" class="bottoni" style="color: red;">logout</button>
 </div>
 <script>
     $(document).ready(function() {

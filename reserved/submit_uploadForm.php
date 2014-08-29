@@ -15,7 +15,7 @@
                 <li>
                     <textarea cols="50" rows="10" maxlength="500" name="abstract" class="textbox"></textarea>
                 </li>
-                <li>
+                <li  style="text-align: left">
                     <input name="userfile" type="file" />
                 </li>
                 <li style="text-align: right">

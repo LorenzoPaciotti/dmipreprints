@@ -52,7 +52,7 @@ function stampaTabellaCompleta($data, $mod) {
             print_r($row['titolo']);
             echo '</td>';
             echo '<td>';
-            print_r($row['autore']);
+            print_r($row['nome']);
             echo '</td>';
             echo '<td>';
             print_r($row['data_inserimento']);
@@ -100,7 +100,7 @@ function stampaTabellaCompleta($data, $mod) {
             print_r($row['titolo']);
             echo '</td>';
             echo '<td>';
-            print_r($row['autore']);
+            print_r($row['nome']);
             echo '</td>';
             echo '<td>';
             print_r($row['data_inserimento']);
@@ -142,7 +142,7 @@ function stampaTabella($data) {
         print_r($row['titolo']);
         echo '</td>';
         echo '<td>';
-        print_r($row['autore']);
+        print_r($row['nome']);
         echo '</td>';
         echo '<td>';
         print_r($row['data_inserimento']);

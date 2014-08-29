@@ -3,7 +3,7 @@
 	width:100%;
 	box-shadow: 1px 1px 5px #888888;
 	/*border:1px solid #000000;*/
-        border: none;
+        /*border: none;*/
 	
 	-moz-border-radius-bottomleft:0px;
 	-webkit-border-bottom-left-radius:0px;
@@ -54,7 +54,7 @@
 	
 	/*border:1px solid #000000;*/
 	border-width:0px 1px 1px 0px;
-	text-align:left;
+	text-align:center;
 	padding:7px;
 	font-weight:normal;
 	color:#000000;
@@ -73,7 +73,6 @@
 	background-color:#005fbf;
 	border:0px solid #000000;
 	text-align:center;
-	border-width:0px 0px 1px 1px;
 	font-weight:bold;
 	color:#ffffff;
 }
@@ -83,10 +82,4 @@
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#005fbf", endColorstr="#003f7f");	background: -o-linear-gradient(top,#005fbf,003f7f);
 
 	background-color:#005fbf;
-}
-.tabelle tr:first-child td:first-child{
-	border-width:0px 0px 1px 0px;
-}
-.tabelle tr:first-child td:last-child{
-	border-width:0px 0px 1px 1px;
 }
