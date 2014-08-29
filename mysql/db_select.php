@@ -56,7 +56,6 @@ function interrogaPerUID($uid) {
     global $db_connect;
     $query = "select * from PRINTS where autore= '" . $uid ."'";
     $query = pulisciQuery($query);
-    echo $query;
     $result = mysqli_query($db_connect, $query) or die(mysqli_error($db_connect));
     mysqli_close($db_connect);
     return $result;
@@ -68,7 +67,6 @@ function interrogaPerIdPaper($id){
     global $db_connect;
     $query = "select * from PRINTS where id_PRINTS= '" . $id ."'";
     $query = pulisciQuery($query);
-    echo $query;
     $result = mysqli_query($db_connect, $query) or die(mysqli_error($db_connect));
     mysqli_close($db_connect);
     return $result;
@@ -80,7 +78,6 @@ function interrogaWhole(){
     global $db_connect;
     $query = "select * from PRINTS";
     $query = pulisciQuery($query);
-    echo $query;
     $result = mysqli_query($db_connect, $query) or die(mysqli_error($db_connect));
     mysqli_close($db_connect);
     return $result;

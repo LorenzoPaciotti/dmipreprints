@@ -2,13 +2,20 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'mysql/db_select.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'mysql/db_update.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'search/main_tabella.php';
-print_r(" Logged in as: ");
-print_r($_SESSION['nome']);
-print_r(" UID: " . $_SESSION['uid']);
-print_r($_SESSION['logged_type']);
 ?>
 
-<button onclick="logout()" id="button_logout">logout</button>
+<div style="float: left">
+    <?php
+    print_r(" Logged in as: ");
+    print_r($_SESSION['nome']);
+    print_r(" UID: " . $_SESSION['uid']);
+    print_r(" Tipo di accesso: ");
+    print_r($_SESSION['logged_type']);
+    ?>
+</div>
+<div style="float: right">
+    <button onclick="logout()" id="button_logout" class="bottoni">logout</button>
+</div>
 <script>
     $(document).ready(function() {
         $("button").click(function(event) {

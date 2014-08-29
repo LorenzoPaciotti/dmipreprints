@@ -5,7 +5,7 @@
                 <input id="input_uid" class="textbox" placeholder="uid">
             </td>
             <td>
-                <input id="input_pw" class="textbox" placeholder="password">
+                <input type="password" id="input_pw" class="textbox" placeholder="password">
             </td>
         </tr>
     </table>
