@@ -47,7 +47,7 @@
                         <header id="header">
                             <h1><a href="#" id="logo">DMI Preprints</a></h1>
                             <nav id="nav">
-                                <a href="main.php">Search a Preprint</a>
+                                <a href="main.php">preprint search</a>
                                 <a href="reserved.php" class="current-page-item">Reserved Area</a>
                             </nav>
                         </header>

@@ -31,20 +31,13 @@
             function vistaKeyword() {
                 $("#contenitore_dinamico").load("search/main_keyword.php");
             }
-
+            $(document).ready();
             function visAbstract(id_paper) {
                 $("#contenuto_titolo_print").load("search/printTitlePrinter.php", {id: id_paper});
                 $("#contenuto_abstract").load("search/abstractPrinter.php", {id: id_paper}, function() {
                     TrgModalOverlay();
                 });
             }
-/*
-            $(document).ready(function() {
-                //$("#contenuto_abstract").load("search/abstractPrinter.php", {id: id_paper};
-                //$('contenuto_abstract').replaceWith($("#contenitore_abstract").load("search/abstractPrinter.php", {id: id_paper})
-                
-            });
-*/
         </script>
         <div id="header-wrapper">
             <div class="container">
@@ -53,7 +46,7 @@
                         <header id="header">
                             <h1><a href="#" id="logo">DMI Preprints</a></h1>
                             <nav id="nav">
-                                <a href="main.php" class="current-page-item">Search a Preprint</a>
+                                <a href="main.php" class="current-page-item">preprint search</a>
                                 <a href="reserved.php">Reserved Area</a>
                             </nav>
                         </header>
