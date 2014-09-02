@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>DMIPreprints</title>
-        <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+        
         <script src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
         <script src="js/config.js"></script>
@@ -16,13 +16,15 @@
         <link rel="stylesheet" href="css/main.css" />
         <link rel="stylesheet" type="text/css" href="css/tabelle.css">
         <link rel="stylesheet" type="text/css" href="css/controlli.css">
+        <script src="js/targetweb-modal-overlay.js"></script>
+        <link href='css/targetweb-modal-overlay.css' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
         <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 
     </head>
     <body>
         <script>
-            //FUNZIONI
             function vistaAnno() {
                 $("#contenitore_dinamico").load("search/main_year.php");
             }
@@ -30,11 +32,20 @@
             function vistaKeyword() {
                 $("#contenitore_dinamico").load("search/main_keyword.php");
             }
-            
-            function visAbstract(id_paper){
-                alert(id_paper);
-            }
 
+            function visAbstract(id_paper) {
+                $("#contenuto_titolo_print").load("search/printTitlePrinter.php", {id: id_paper});
+                $("#contenuto_abstract").load("search/abstractPrinter.php", {id: id_paper}, function() {
+                    TrgModalOverlay();
+                });
+            }
+/*
+            $(document).ready(function() {
+                //$("#contenuto_abstract").load("search/abstractPrinter.php", {id: id_paper};
+                //$('contenuto_abstract').replaceWith($("#contenitore_abstract").load("search/abstractPrinter.php", {id: id_paper})
+                
+            });
+*/
         </script>
         <div id="header-wrapper">
             <div class="container">
@@ -69,6 +80,14 @@
         </div>
 
         <div id="contenitore_dinamico" class="contenitore">
+        </div>
+        <div id="modal1" class="trg-overlay hide small">
+            <div class="trg-modal-header" >
+                <h2 id="contenuto_titolo_print" class="wordwrap"></h2>
+            </div><!-- Modal header-->
+            <div class="wordwrap" id="contenuto_abstract">
+            </div>
+            <a class="close-overlay">&#215;</a>
         </div>
 
         <footer>

@@ -21,9 +21,10 @@ function stampaButtonApprova($id) {
 }
 
 function stampaLinkAbstract($id) {
-    $id = "'.$id.'";
+    
+    //$id = "'.$id.'";
     $tmp = 'onClick="visAbstract(' . $id . ')"';
-    echo '<a href="#" ' . $tmp . ' >abstract</a>';
+    echo '<a href="#" class="apri-trg-overlay" data="modal1" ' . $tmp . ' >abstract</a>';
 }
 
 function stampaTabellaCompleta($data, $mod) {
@@ -151,7 +152,7 @@ function stampaTabella($data) {
         print_r($row['titolo']);
         echo '</td>';
         echo '<td>';
-        stampaLinkAbstract($row['abstract']);
+        stampaLinkAbstract($row['id_PRINTS']);
         echo '</td>';
         echo '<td>';
         print_r($row['nome']);
