@@ -2,8 +2,7 @@
 <html>
     <head>
         <title>DMIPreprints</title>
-        
-        <script src="js/jquery.min.js"></script>
+        <!--<script src="js/jquery.min.js"></script>-->
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
         <script src="js/config.js"></script>
         <script src="js/skel.min.js"></script>
@@ -17,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/controlli.css">
         <link rel="stylesheet" type="text/css" href="css/uploadForm.css">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
         <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
     </head>

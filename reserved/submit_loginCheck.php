@@ -14,9 +14,9 @@ if (isset($_POST['uid']) && isset($_POST['pw'])) {
     $output_ldap = LDAPAuth($inputUID); //chiamata LDAP
 
     if ($output_ldap['count'] == 1) {
-        print "autorizzazione OK";
+        echo "autorizzazione OK";
         if (RADIUSAuth($inputUID, $inputPass)) {
-            print "autenticazione OK";
+            echo "autenticazione OK";
             sec_session_start();
             if ($_POST['uid'] === $mod_uid) {
                 $_SESSION['logged_type'] = "mod";
@@ -25,6 +25,7 @@ if (isset($_POST['uid']) && isset($_POST['pw'])) {
             }
             $_SESSION['uid'] = $inputUID;
             $_SESSION['nome'] = $output_ldap[0]['sn'][0];
+            $_SESSION['LAST_ACTIVITY'] = time(); //aggiorna timestamp sessione
         } else {
             print_r("\nNO autenticazione\n");
         }

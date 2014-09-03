@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'search/main_tabella
 
 <div style="float: left">
     <?php
-    print_r(" Logged in as: ");
+    print_r(" Login: ");
     print_r($_SESSION['nome']);
     print_r(" UID: " . $_SESSION['uid']);
     print_r(" Tipo di accesso: ");

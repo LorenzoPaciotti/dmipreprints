@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'search/main_tabella
 
 <div style="float: left">
     <?php
-    print_r(" Logged in as: ");
+    print_r(" Login: ");
     print_r($_SESSION['nome']);
     print_r(" UID: " . $_SESSION['uid']);
     print_r(" Tipo di accesso: ");
@@ -25,16 +25,20 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'search/main_tabella
                     var idTgt = event.target.id.substring(6);
                     idTgt = idTgt.replace('"', '');
                     if (confirm("Eliminare?")) {
-                        $("#cont_feedback").load("reserved/submit_removeFilePHP.php", {id: idTgt});
-                        location.reload();
+                        $("#cont_feedback").load("reserved/submit_removeFilePHP.php", {id: idTgt}, function() {
+                            location.reload();
+                        });
+
                     }
                 } else {
                     if (cmd === "appr") {
                         var idTgt = event.target.id.substring(6);
                         idTgt = idTgt.replace('"', '');
                         if (confirm("Approvare?")) {
-                            $("#cont_feedback").load("reserved/submit_approvePaper.php", {id: idTgt});
-                            location.reload();
+                            $("#cont_feedback").load("reserved/submit_approvePaper.php", {id: idTgt}, function() {
+                                location.reload();
+                            });
+
                         }
                     }
                 }
@@ -47,8 +51,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'search/main_tabella
         <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'reserved/submit_uploadForm.php'; ?>
     </div>
     <div>
-        <h2>preprint caricati</h2>
+        <h2>propri preprint</h2>
         <?php stampaTabellaCompleta(interrogaPerUID($_SESSION['uid']), 1) ?>
+    </div>
+    <div style="margin-top: 5px">
         <h2>tutti i preprint nel database</h2>
         <?php stampaTabellaCompleta(interrogaWhole(), 1); ?>
     </div>
