@@ -31,11 +31,11 @@
             function vistaKeyword() {
                 $("#contenitore_dinamico").load("search/main_keyword.php");
             }
-            $(document).ready();
+
             function visAbstract(id_paper) {
                 $("#contenuto_titolo_print").load("search/printTitlePrinter.php", {id: id_paper});
                 $("#contenuto_abstract").load("search/abstractPrinter.php", {id: id_paper}, function() {
-                    TrgModalOverlay();
+                    TrgModalOverlayLoader("modal1");
                 });
             }
         </script>
