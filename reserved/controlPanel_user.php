@@ -38,7 +38,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'search/main_tabella
         <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'reserved/submit_uploadForm.php'; ?>
     </div>
     <div>
-        <h2>Your Preprints</h2>
+        <h2>propri preprint</h2>
         <?php stampaTabellaCompleta(interrogaPerUID($_SESSION['uid']), 0); ?>
     </div>
 </div>

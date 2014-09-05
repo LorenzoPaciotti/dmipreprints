@@ -21,20 +21,34 @@
         <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript"
+                src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+
     </head>
     <body>
+
         <script>
             function vistaAnno() {
-                $("#contenitore_dinamico").load("search/main_year.php");
+                $("#contenitore_dinamico").load("search/main_year.php", function() {
+                    MathJax.Hub.Typeset();
+                });
+
             }
 
             function vistaKeyword() {
-                $("#contenitore_dinamico").load("search/main_keyword.php");
+                $("#contenitore_dinamico").load("search/main_keyword.php", function() {
+                    MathJax.Hub.Typeset();
+                });
             }
 
             function visAbstract(id_paper) {
                 $("#contenuto_titolo_print").load("search/printTitlePrinter.php", {id: id_paper});
                 $("#contenuto_abstract").load("search/abstractPrinter.php", {id: id_paper}, function() {
+                    MathJax.Hub.Typeset();
                     TrgModalOverlayLoader("modal1");
                 });
             }

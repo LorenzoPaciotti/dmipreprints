@@ -9,6 +9,12 @@
                 <li style="margin-top: 10px">
                     <textarea maxlength="100" cols="70" rows="2" type="text" class="textbox" name="titolo" required></textarea>
                 </li>
+                <li>
+                    <label for="uid">Collaboratori</label>
+                </li>
+                <li style="margin-top: 10px">
+                    <textarea maxlength="100" cols="70" rows="2" type="text" class="textbox" name="collaboratori" required></textarea>
+                </li>
                 <li style="margin-top: 10px">
                     <label for="abstract">Abstract</label>
                 </li>
@@ -17,7 +23,7 @@
                 </li>
                 <li  style="text-align: right">
                     <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
-                    <input name="userfile" type="file" class="bottoni"/>
+                    <input name="userfile" type="file"/>
                 </li>
                 <li style="text-align: right">
                     <input type="submit" class="bottoni" value="Send File" />

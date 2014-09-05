@@ -36,7 +36,7 @@ function stampaTabellaCompleta($data, $mod) {
             echo 'titolo';
             echo '</td>';
             echo '<td>';
-            echo 'autore';
+            echo 'collaboratori';
             echo '</td>';
             echo '<td>';
             echo 'data';
@@ -60,7 +60,7 @@ function stampaTabellaCompleta($data, $mod) {
                 print_r($row['titolo']);
                 echo '</td>';
                 echo '<td>';
-                print_r($row['nome']);
+                print_r($row['collaboratori']);
                 echo '</td>';
                 echo '<td>';
                 print_r($row['data_inserimento']);
@@ -87,7 +87,7 @@ function stampaTabellaCompleta($data, $mod) {
             echo 'titolo';
             echo '</td>';
             echo '<td>';
-            echo 'autore';
+            echo 'collaboratori';
             echo '</td>';
             echo '<td>';
             echo 'data';
@@ -108,7 +108,7 @@ function stampaTabellaCompleta($data, $mod) {
                 print_r($row['titolo']);
                 echo '</td>';
                 echo '<td>';
-                print_r($row['nome']);
+                print_r($row['collaboratori']);
                 echo '</td>';
                 echo '<td>';
                 print_r($row['data_inserimento']);
@@ -120,7 +120,11 @@ function stampaTabellaCompleta($data, $mod) {
                 stampaApprovato($row['approvato']);
                 echo '</td>';
                 echo '<td>';
-                stampaButtonElimina($row['id_PRINTS']);
+                if($row['approvato'] == 0){
+                    stampaButtonElimina($row['id_PRINTS']);
+                }else{
+                    echo 'non disponibile';
+                }
                 echo '</td>';
                 echo '</tr>';
             }
@@ -140,7 +144,7 @@ function stampaTabella($data) {
         echo 'Abstract';
         echo '</td>';
         echo '<td>';
-        echo 'Author';
+        echo 'Participants';
         echo '</td>';
         echo '<td>';
         echo 'Upload Date';
@@ -158,7 +162,7 @@ function stampaTabella($data) {
             stampaLinkAbstract($row['id_PRINTS']);
             echo '</td>';
             echo '<td>';
-            print_r($row['nome']);
+            print_r($row['collaboratori']);
             echo '</td>';
             echo '<td>';
             print_r($row['data_inserimento']);

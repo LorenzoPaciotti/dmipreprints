@@ -28,14 +28,15 @@ function upload() {
         if ($moveResult == true) {
             echo "DEBUG: file spostato correttamente da " . $fileTmpLoc . " a " . $pathAndName;
             //INSERIMENTO IN DATABASE
-            $titolo = $_POST["titolo"];
-            $autore = $_SESSION["uid"];
+            $titolo = addslashes($_POST["titolo"]);
+            $uploader = $_SESSION["uid"];
             $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
-            $abstract = $_POST["abstract"];
+            $abstract = addslashes($_POST["abstract"]) ;
             $data = date("Y-m-d H:i:s");
             $anno = date("Y");
+            $collaboratori = $_POST["collaboratori"];
 
-            inserisciPaper($titolo, $autore, $abstract, $fileName, $data, $anno);
+            inserisciPaper($titolo, $uploader,$collaboratori, $abstract, $fileName, $data, $anno);
             #TEST
             //header("Location: ../reserved.php");
         } else {

@@ -7,7 +7,7 @@ function listaAnni() {
     connettiDBManager();
     selezionaSchema();
     global $db_connect;
-    $query = 'select distinct(anno) from PRINTS';
+    $query = 'select distinct(anno) from PRINTS where approvato = 1';
     $query = pulisciQuery($query);
     $result = mysqli_query($db_connect, $query) or die(mysqli_error($db_connect));
     mysqli_close($db_connect);
@@ -50,7 +50,7 @@ function interrogaPerAnno($anno, $moderatore) {
     connettiDBManager();
     selezionaSchema();
     global $db_connect;
-    $query = 'select * from PRINTS join AUTORI on PRINTS.autore = AUTORI.uid where anno=' . $anno;
+    $query = 'select * from PRINTS where anno=' . $anno;
     
     //presentiamo al pubblico solo i paper approvati dal moderatore
     if (!$moderatore){
@@ -68,11 +68,11 @@ function interrogaPerKeyword($keyword, $moderatore) {
     selezionaSchema();
     global $db_connect;
     $keyword = '"%' . $keyword . '%"';
-    $query = 'select * from PRINTS join AUTORI on PRINTS.autore = AUTORI.uid where (titolo LIKE ' . $keyword . ' OR abstract LIKE ' . $keyword . ' OR autore LIKE ' . $keyword.') AND approvato = 1';
+    $query = 'select * from PRINTS where (titolo LIKE ' . $keyword . ' OR abstract LIKE ' . $keyword . ' OR uploader LIKE ' . $keyword.') AND approvato = 1';
     
     //query per moderatore
     if ($moderatore){
-        $query = 'select * from PRINTS join AUTORI on PRINTS.autore = AUTORI.uid where titolo LIKE ' . $keyword . ' OR abstract LIKE ' . $keyword . ' OR autore LIKE ' . $keyword;
+        $query = 'select * from PRINTS where titolo LIKE ' . $keyword . ' OR abstract LIKE ' . $keyword . ' OR uploader LIKE ' . $keyword;
     }
     
     $query = pulisciQuery($query, $moderatore);
@@ -85,7 +85,7 @@ function interrogaPerUID($uid) {
     connettiDBManager();
     selezionaSchema();
     global $db_connect;
-    $query = "select * from PRINTS join AUTORI on PRINTS.autore = AUTORI.uid where autore= '" . $uid ."'";
+    $query = "select * from PRINTS where uploader= '" . $uid ."'";
     $query = pulisciQuery($query);
     $result = mysqli_query($db_connect, $query) or die(mysqli_error($db_connect));
     mysqli_close($db_connect);
@@ -96,7 +96,7 @@ function interrogaPerIdPaper($id){
     connettiDBManager();
     selezionaSchema();
     global $db_connect;
-    $query = "select * from PRINTS join AUTORI on PRINTS.autore = AUTORI.uid where id_PRINTS= '" . $id ."'";
+    $query = "select * from PRINTS where id_PRINTS= '" . $id ."'";
     $query = pulisciQuery($query);
     $result = mysqli_query($db_connect, $query) or die(mysqli_error($db_connect));
     mysqli_close($db_connect);
@@ -107,7 +107,7 @@ function interrogaWhole(){
     connettiDBManager();
     selezionaSchema();
     global $db_connect;
-    $query = "select * from PRINTS join AUTORI on PRINTS.autore = AUTORI.uid";
+    $query = "select * from PRINTS join UPLOADERS on PRINTS.uploader = UPLOADERS.uid";
     $query = pulisciQuery($query);
     $result = mysqli_query($db_connect, $query) or die(mysqli_error($db_connect));
     mysqli_close($db_connect);
