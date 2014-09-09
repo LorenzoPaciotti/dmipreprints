@@ -9,7 +9,7 @@
                 <li style="margin-top: 10px">
                     <textarea maxlength="100" cols="70" rows="2" type="text" class="textbox" name="titolo" required></textarea>
                 </li>
-                <li>
+                <li style="margin-top: 10px">
                     <label for="uid">Collaboratori</label>
                 </li>
                 <li style="margin-top: 10px">

@@ -1,6 +1,6 @@
 <?php
 
-$ini_array = parse_ini_file("/home/lorenzo/uploads/set.ini");
+$ini_array = parse_ini_file("/etc/dmipreprints/set.ini");
 
 //mysql
 $mysql_user = $ini_array['mysql_user']; 

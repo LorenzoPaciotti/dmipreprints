@@ -54,7 +54,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/dmipreprints/' . 'search/main_tabella
         <h2>propri preprint</h2>
         <?php stampaTabellaCompleta(interrogaPerUID($_SESSION['uid']), 1) ?>
     </div>
-    <div style="margin-top: 15px">
+    <div style="margin-top: 20px">
         <h2>tutti i preprint nel database</h2>
         <?php stampaTabellaCompleta(interrogaWhole(), 1); ?>
     </div>
