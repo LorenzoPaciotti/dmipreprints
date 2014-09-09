@@ -8,8 +8,8 @@ function LDAPAuth($UID) {
     ldap_set_option($ldapconn, LDAP_OPT_PROTOCOL_VERSION, 3);
     $ds = $ldapconn;
     $dn = "ou=users,dc=dmi,dc=unipg,dc=it";
-    //l'utente deve avere la licenza all'uso di DMIPrePrints
-    $filter = "(&(carLicense=:dmipreprints:)(uid=$UID))";
+    //l'utente deve avere la licenza all'uso di dmipreprints
+    $filter = "(&(carLicense=dmipreprints)(uid=$UID))";
     //selezione dei campi di interesse per il ritorno
     $justthese = array("sn");
 

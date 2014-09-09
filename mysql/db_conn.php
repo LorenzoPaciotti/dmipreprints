@@ -9,7 +9,7 @@ function connettiDBManager() {
 
 function selezionaSchema() {
     global $db_connect;
-    mysqli_select_db($db_connect, 'DMIPrePrints') or die('Could not select database');
+    mysqli_select_db($db_connect, 'dmipreprints') or die('Could not select database');
 }
 
 function disconnettiDBManager() {

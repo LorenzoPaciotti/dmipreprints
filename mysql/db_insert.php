@@ -6,8 +6,8 @@ function inserisciPaper($titolo, $uploader,$collaboratori, $abstract, $nome_file
     global $db_connect;
     connettiDBManager();
 
-    #selezione dello schema DMIPrePrints
-    mysqli_select_db($db_connect, 'DMIPrePrints') or die('Could not select database');
+    #selezione dello schema dmipreprints
+    mysqli_select_db($db_connect, 'dmipreprints') or die('Could not select database');
     
     //controllo uploader presente
     $query = "select count(*) from UPLOADERS where uid = '".$uploader."'";

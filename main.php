@@ -17,7 +17,7 @@
         <link rel="stylesheet" type="text/css" href="css/controlli.css">
         <script src="js/targetweb-modal-overlay.js"></script>
         <link href='css/targetweb-modal-overlay.css' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
         <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 
@@ -25,7 +25,7 @@
             MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
         </script>
         <script type="text/javascript"
-                src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+                src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
         </script>
 
     </head>

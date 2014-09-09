@@ -9,11 +9,11 @@ function CreaDB() {
     connettiDBManager();
 
     #CREAZIONE DB
-    $query = 'CREATE DATABASE if not exists DMIPrePrints';
+    $query = 'CREATE DATABASE if not exists dmipreprints';
     $result = mysqli_query($db_connect, $query) or die('Impossibile creare schema');
 
     #SELEZIONE SCHEMA
-    mysqli_select_db($db_connect, 'DMIPrePrints') or die('Impossibile selezionare lo schema');
+    mysqli_select_db($db_connect, 'dmipreprints') or die('Impossibile selezionare lo schema');
 
     ##CREAZIONE TABELLE
     #UPLOADERS contiene gli uid di chi ha caricato un file
